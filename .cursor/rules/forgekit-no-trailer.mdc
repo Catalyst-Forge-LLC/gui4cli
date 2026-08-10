@@ -1,0 +1,13 @@
+---
+description: Ban unrequested git commit trailers and attribution stamps
+alwaysApply: true
+---
+
+# Commit message policy
+
+When creating git commits:
+
+- Use only `git commit -m "..."` or `git commit -F <file>`.
+- Do **not** pass or inject `--trailer` unless the user explicitly requests a specific trailer.
+- Do **not** add `Co-authored-by`, `Signed-off-by`, `Made-with`, or similar attribution lines unless asked.
+- Keep messages concise and focused on why the change exists.
