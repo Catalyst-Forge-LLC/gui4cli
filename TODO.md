@@ -12,7 +12,8 @@ Seeded from `docs/PHASE_1_BRIEF.md` §11. Flat list until Phase 6 (brand pillars
 - [x] Last-run values (local JSON)
 - [x] Plain-language errors when detection or spawn fails
 - [x] Prove the window opens (`windowd` + NW.js; first run downloaded ~200 MB)
-- [ ] Click through Run → live output → exit code in the window
+- [x] Click through Run → live output → exit code in the window
+- [x] Compact two-column window so form + preview + output fit on a typical laptop screen
 - [ ] `--help` fallback coverage on a script with no static options
 
 ## After the hero path is green

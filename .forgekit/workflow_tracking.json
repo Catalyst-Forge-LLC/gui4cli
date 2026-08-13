@@ -42,14 +42,14 @@
         ".forgekit/IDEAS.md created",
         "Phase 2 doc scope only (no extra ForgeKit templates)",
         "Detected fields visible in --json output for Commander and yargs fixtures",
-        "pnpm dev / windowd opens the fixture window (NW.js runtime cached after first download)"
+        "pnpm dev / windowd opens the fixture window (NW.js runtime cached after first download)",
+        "Hero flow in the window: form → Run → live output → exit code (user confirmed 2026-08-13)"
       ],
-      "exitCriteriaRemaining": [
-        "Hero flow in the window: form → Run → live output → exit code (click-through)"
-      ],
+      "exitCriteriaRemaining": [],
       "notes": [
         "Remapped ForgeKit web CRUD / pnpm dev criteria to CLI + windowd hero flow.",
-        "Spine: npx gui4cli fixtures/resize.js → form → Run → live output."
+        "Spine: npx gui4cli fixtures/resize.js → form → Run → live output.",
+        "User confirmed 2026-08-13: window stays open and minimally works. Tightened layout after they could not see enough on screen."
       ]
     },
     "3-stabilization": {
@@ -317,6 +317,12 @@
       "phase": "2-scaffolding",
       "summary": "User started Phase 2. Scaffolded TS CLI spine, fixtures, tests, CONTEXT_PROMPT/README/TODO/IDEAS. Detect --json works. Windowd GUI not yet proven on this machine.",
       "outcome": "Hero detect path green. Next: pnpm dev window + Run/stream."
+    },
+    {
+      "date": "2026-08-13",
+      "phase": "2-scaffolding",
+      "summary": "User confirmed the fixture window works. Compacted to a two-column 960x620 layout so form, preview, and output fit on screen.",
+      "outcome": "Phase 2 remapped exit criteria look satisfied. Wait for user before marking the phase complete."
     }
   ]
 }

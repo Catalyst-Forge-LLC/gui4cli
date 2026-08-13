@@ -200,32 +200,52 @@ export const windowStyles = `:root {
   --ok: #2f5d50;
 }
 * { box-sizing: border-box; }
-html, body { margin: 0; height: 100%; }
+html, body { margin: 0; height: 100%; overflow: hidden; }
 body {
-  font: 15px/1.45 "Segoe UI", system-ui, sans-serif;
+  font: 14px/1.4 "Segoe UI", system-ui, sans-serif;
   background: var(--bg);
   color: var(--ink);
   display: flex;
   flex-direction: column;
 }
-header, footer { padding: 16px 20px; }
-header { border-bottom: 1px solid var(--line); background: var(--surface); }
-h1 { margin: 0 0 4px; font-size: 1.25rem; }
-.desc, .muted { color: var(--muted); }
+header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: baseline;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+  flex-shrink: 0;
+}
+h1 { margin: 0; font-size: 1.1rem; }
+h2 { margin: 0 0 6px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
+.desc, .muted { color: var(--muted); margin: 2px 0 0; }
+#status { margin: 0; white-space: nowrap; }
 main {
   flex: 1;
   min-height: 0;
   display: grid;
-  grid-template-rows: auto auto 1fr;
+  grid-template-columns: minmax(240px, 1fr) minmax(320px, 1.2fr);
   gap: 12px;
-  padding: 16px 20px 20px;
+  padding: 12px 16px 16px;
 }
-.field { display: flex; flex-direction: column; gap: 4px; margin-bottom: 12px; }
+.form-pane, .run-pane {
+  min-height: 0;
+  min-width: 0;
+  overflow: auto;
+}
+.run-pane {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.field { display: flex; flex-direction: column; gap: 2px; margin-bottom: 10px; }
 .field-label { font-weight: 600; }
-.field-help { color: var(--muted); font-size: 0.85rem; }
+.field-help { color: var(--muted); font-size: 0.8rem; }
 input, select {
   font: inherit;
-  padding: 8px 10px;
+  padding: 6px 8px;
   border: 1px solid var(--line);
   border-radius: 6px;
   background: #fff;
@@ -235,14 +255,18 @@ input[type="checkbox"] { width: 1.1rem; height: 1.1rem; }
   background: #1f1b16;
   color: #f6f4ef;
   border-radius: 8px;
-  padding: 10px 12px;
+  padding: 8px 10px;
   overflow: auto;
   white-space: pre-wrap;
   font: 12px/1.4 ui-monospace, Consolas, monospace;
 }
-.output { min-height: 140px; }
+.preview { max-height: 4.6em; flex-shrink: 0; }
+.output { flex: 1; min-height: 120px; }
 .output .stderr { color: #f0b4b4; }
-.actions { display: flex; gap: 8px; align-items: center; }
+.actions { display: flex; gap: 8px; align-items: center; flex-shrink: 0; }
+@media (max-width: 720px) {
+  main { grid-template-columns: 1fr; }
+}
 button {
   font: inherit;
   border: 0;

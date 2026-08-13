@@ -6,8 +6,8 @@ import { resolveWindowdLaunch } from "./resolve.js";
 
 export async function openWindow(dir: string, spec: FormSpec): Promise<number> {
   const launch = resolveWindowdLaunch();
-  const width = String(spec.window?.width ?? 720);
-  const height = String(spec.window?.height ?? 740);
+  const width = String(spec.window?.width ?? 960);
+  const height = String(spec.window?.height ?? 620);
   const artifacts = process.env.GUI4CLI_WINDOW_LOGS;
   const args = [
     ...launch.prefixArgs,

@@ -28,7 +28,10 @@ describe("writeWindowApp", () => {
       lastRunPath: "/tmp/lastrun.json",
       platform: process.platform,
     });
-    expect(readFileSync(join(dir, "index.html"), "utf8")).toContain("Resize");
+    const html = readFileSync(join(dir, "index.html"), "utf8");
+    expect(html).toContain("Resize");
+    expect(html).toContain("form-pane");
+    expect(html).toContain("run-pane");
     expect(readFileSync(join(dir, "app.js"), "utf8")).toContain("buildArgv");
     expect(readFileSync(join(dir, "payload.js"), "utf8")).toContain("--input");
   });

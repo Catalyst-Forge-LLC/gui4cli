@@ -24,13 +24,15 @@ export async function writeWindowApp(payload: WindowPayload): Promise<string> {
   </head>
   <body>
     <header>
-      <h1>${escapeHtml(payload.spec.title)}</h1>
-      <p class="desc">${escapeHtml(payload.spec.description ?? "Fill the form, review the command, then Run.")}</p>
+      <div>
+        <h1>${escapeHtml(payload.spec.title)}</h1>
+        <p class="desc">${escapeHtml(payload.spec.description ?? "Fill the form, review the command, then Run.")}</p>
+      </div>
       <p id="status" class="muted" data-phase="ready">Ready</p>
     </header>
     <main>
-      <form id="form"></form>
-      <section>
+      <form id="form" class="form-pane"></form>
+      <section class="run-pane">
         <h2>Command preview</h2>
         <pre id="preview" class="preview"></pre>
         <div class="actions">
@@ -38,8 +40,6 @@ export async function writeWindowApp(payload: WindowPayload): Promise<string> {
           <button type="button" id="cancel" disabled>Cancel</button>
           <span id="result" class="muted"></span>
         </div>
-      </section>
-      <section>
         <h2>Output</h2>
         <pre id="output" class="output"></pre>
       </section>

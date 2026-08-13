@@ -100,7 +100,7 @@ Target → detect + config merge → FormSpec → user submit → Run. LastRun k
 
 ### In Progress
 
-- Phase 2 spine is coded. Detect `--json` and windowd launch are proven. Still need a click-through of Run → stream → exit code.
+- Phase 2 spine works end to end. Window layout is now two-column (960×620) so more of the form and output stay on screen.
 
 ### Not Started
 
