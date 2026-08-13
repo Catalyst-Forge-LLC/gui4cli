@@ -20,6 +20,8 @@ pnpm dev
 
 `pnpm dev` opens the Commander fixture in a desktop window. The first windowd launch may download the NW.js runtime (~200 MB).
 
+If the window flashes and closes, run `pnpm dev` from a normal terminal (not Cursor's JavaScript Debug Terminal). Inspector flags inherited by NW.js will shut the window down.
+
 `--json` prints the detected form and exits (no window). Use that in CI or when you cannot open a GUI.
 
 ### Try a script

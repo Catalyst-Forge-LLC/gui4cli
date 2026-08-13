@@ -266,6 +266,13 @@
       "issue": "pnpm nests windowd under .pnpm, so joining ../.bin from package.json misses node_modules/.bin. spawn('windowd') then ENOENT because windowd is not on PATH. The official shim also expects bun.",
       "resolution": "Launch windowd/bin/cli.ts with bun if present, otherwise node + tsx. Do not spawn a bare 'windowd' name.",
       "category": "tooling"
+    },
+    {
+      "timestamp": "2026-08-13T23:50:00",
+      "phase": "2-scaffolding",
+      "issue": "From Cursor's JS Debug Terminal, pnpm dev opened the windowd window and it closed immediately. The same launch stayed open without the debugger. VSCODE_INSPECTOR_OPTIONS / NODE_OPTIONS --inspect are inherited by NW.js/Chromium and tear the window down.",
+      "resolution": "Strip inspector env when spawning windowd. Prefer a normal terminal for pnpm dev.",
+      "category": "tooling"
     }
   ],
   "sessions": [

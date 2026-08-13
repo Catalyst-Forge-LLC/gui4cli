@@ -73,6 +73,7 @@ Target → detect + config merge → FormSpec → user submit → Run. LastRun k
 - Show command preview (argv + cwd) before Run.
 - On Windows, cancel must `taskkill /T /F` the child tree.
 - `--json` prints the spec without opening a window (tests and CI).
+- When spawning windowd, strip `VSCODE_INSPECTOR_OPTIONS` and `--inspect` from `NODE_OPTIONS`. Cursor's JS Debug Terminal otherwise opens the window and closes it immediately.
 
 ## Design Philosophy
 
