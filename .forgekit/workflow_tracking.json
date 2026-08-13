@@ -6,12 +6,12 @@
     "archetype": "product",
     "status": "active"
   },
-  "currentPhase": "1-architecture",
+  "currentPhase": "2-scaffolding",
   "phases": {
     "1-architecture": {
-      "status": "in_progress",
+      "status": "completed",
       "startedAt": "2026-08-10",
-      "completedAt": null,
+      "completedAt": "2026-08-13",
       "exitCriteriaMet": [
         "First feature batch defined",
         "Major decisions recorded in workflow_tracking.json decisions[]",
@@ -28,27 +28,28 @@
         "docs/PHASE_1_BRIEF.md locked 2026-08-13. User accepted stack, platforms, hybrid detect, folder-first --build.",
         "gui4cli@0.0.0 published to npm 2026-08-13. Local folder is gui4cli; GitHub remote may still be argui. See CHAT_CONTINUE.md.",
         "Product name is GUI4CLI (was ArgUI). User confirmed 2026-08-13. See decision d11.",
-        "Phase 1 exit criteria look satisfied. Do not set currentPhase to 2-scaffolding until the user explicitly starts Phase 2."
+        "User started Phase 2 on 2026-08-13 (\"Please start development\")."
       ]
     },
     "2-scaffolding": {
-      "status": "not_started",
-      "startedAt": null,
+      "status": "in_progress",
+      "startedAt": "2026-08-13",
       "completedAt": null,
-      "exitCriteriaMet": [],
+      "exitCriteriaMet": [
+        "CONTEXT_PROMPT.md created and populated by merging PHASE_1_BRIEF.md",
+        "README.md created (how to run the CLI spine)",
+        "TODO.md created and seeded from PHASE_1_BRIEF §11",
+        ".forgekit/IDEAS.md created",
+        "Phase 2 doc scope only (no extra ForgeKit templates)",
+        "Detected fields visible in --json output for Commander and yargs fixtures",
+        "pnpm dev / windowd opens the fixture window (NW.js runtime cached after first download)"
+      ],
       "exitCriteriaRemaining": [
-        "App runs with pnpm dev",
-        "Real data visible on screen",
-        "Core CRUD works",
-        "Hero flow functions end to end",
-        "CONTEXT_PROMPT.md created and populated by merging PHASE_1_BRIEF.md (then template lessons as needed)",
-        "README.md created (from ForgeKit template)",
-        "TODO.md created (from ForgeKit template, seeded from PHASE_1_BRIEF §11)",
-        "IDEAS.md created (from ForgeKit template)",
-        "Phase 2 doc scope only per WORKFLOW §1a (no premature extra templates)"
+        "Hero flow in the window: form → Run → live output → exit code (click-through)"
       ],
       "notes": [
-        "Phase 2 spine for this product is CLI + window hero flow (npx gui4cli fixture), not web CRUD/PocketBase. Remap exit criteria when Phase 2 starts."
+        "Remapped ForgeKit web CRUD / pnpm dev criteria to CLI + windowd hero flow.",
+        "Spine: npx gui4cli fixtures/resize.js → form → Run → live output."
       ]
     },
     "3-stabilization": {
@@ -233,6 +234,15 @@
       "rationale": "User confirmed the product is called GUI4CLI, not ArgUI. Config files follow the product: gui4cli.config.js / gui4cli.json.",
       "alternatives_considered": ["Keep ArgUI as the product name with gui4cli as install-only"],
       "status": "active"
+    },
+    {
+      "id": "d12",
+      "timestamp": "2026-08-13T23:00:00",
+      "phase": "2-scaffolding",
+      "decision": "Launch the instant GUI by writing a temp folder and spawning windowd",
+      "rationale": "windowd expects an index.html directory and gives Node APIs in the renderer for spawn/stream/cancel.",
+      "alternatives_considered": ["Native webview IPC with CLI-owned spawn", "Electron"],
+      "status": "active"
     }
   ],
   "gotchas": [
@@ -240,7 +250,14 @@
       "timestamp": "2026-08-13T22:33:00",
       "phase": "1-architecture",
       "issue": "Unscoped argui is 404 on the registry and passed can-i-publish, but npm publish returned 403: too similar to arg, args, argv. Dry-run and the probe both missed this.",
-      "resolution": "Published unscoped gui4cli@0.0.0. Product name ArgUI can stay. Do not trust dry-run or can-i-publish for similarity.",
+      "resolution": "Published unscoped gui4cli@0.0.0. Product name later became GUI4CLI (d11). Do not trust dry-run or can-i-publish for similarity.",
+      "category": "tooling"
+    },
+    {
+      "timestamp": "2026-08-13T23:00:00",
+      "phase": "2-scaffolding",
+      "issue": "windowd first launch downloads the NW.js runtime (~200 MB). Hero-path 'under 30 seconds' does not apply to a cold machine.",
+      "resolution": "Document in README. Keep --json for CI and for verifying detect without a window.",
       "category": "tooling"
     }
   ],
@@ -280,6 +297,12 @@
       "phase": "1-architecture",
       "summary": "User confirmed product name is GUI4CLI (was ArgUI). Updated brief, genesis, tracking (d11). Phase 2 not started.",
       "outcome": "Name aligned. Still waiting for explicit Phase 2 start."
+    },
+    {
+      "date": "2026-08-13",
+      "phase": "2-scaffolding",
+      "summary": "User started Phase 2. Scaffolded TS CLI spine, fixtures, tests, CONTEXT_PROMPT/README/TODO/IDEAS. Detect --json works. Windowd GUI not yet proven on this machine.",
+      "outcome": "Hero detect path green. Next: pnpm dev window + Run/stream."
     }
   ]
 }

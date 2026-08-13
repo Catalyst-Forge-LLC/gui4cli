@@ -7,3 +7,5 @@ dist/
 build/
 *.log
 .pnpm-store/
+.windowd/
+.gui4cli-window/

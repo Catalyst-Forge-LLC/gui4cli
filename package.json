@@ -1,7 +1,7 @@
 {
   "name": "gui4cli",
-  "version": "0.0.0",
-  "description": "Turn a Node.js CLI script into a desktop form app — inputs, run button, live output. Placeholder release; the CLI is not ready yet.",
+  "version": "0.0.1",
+  "description": "Turn a Node.js CLI script into a desktop form app — inputs, run button, live output.",
   "type": "module",
   "bin": {
     "gui4cli": "bin/gui4cli.js",
@@ -9,9 +9,18 @@
   },
   "files": [
     "bin",
+    "dist",
     "README.md",
     "LICENSE"
   ],
+  "scripts": {
+    "dev": "tsx src/cli.ts fixtures/resize.js",
+    "detect": "tsx src/cli.ts fixtures/resize.js --json",
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "prepare": "tsc"
+  },
   "keywords": [
     "cli",
     "desktop",
@@ -24,5 +33,17 @@
   "author": "Catalyst Forge LLC",
   "engines": {
     "node": ">=20"
+  },
+  "dependencies": {
+    "windowd": "^0.7.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "commander": "^14.0.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0",
+    "vitest": "^3.2.0",
+    "yargs": "^18.0.0"
   }
 }
