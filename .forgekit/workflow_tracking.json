@@ -24,7 +24,7 @@
       ],
       "notes": [
         "ForgeKit MCP greenfield kickoff completed.",
-        "Existing product genesis moved to docs/GENESIS.md (CLI→desktop UI generator)."
+        "docs/GENESIS.md is the single product spec (v1 + v2 folded; CLI name argui)."
       ]
     },
     "2-scaffolding": {
@@ -133,6 +133,12 @@
       "phase": "1-architecture",
       "summary": "ForgeKit greenfield kickoff: tracking + Cursor rules + trailer guardrails; genesis at docs/GENESIS.md.",
       "outcome": "Ready for Phase 1 intake / brief draft from genesis."
+    },
+    {
+      "date": "2026-08-13",
+      "phase": "1-architecture",
+      "summary": "Folded GENESIS_v2.md into docs/GENESIS.md as the single what-not-how spec.",
+      "outcome": "Canonical genesis: ArgUI CLI name, hero flow, detection table, UI structure, non-goals."
     }
   ]
 }
