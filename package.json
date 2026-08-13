@@ -1,9 +1,10 @@
 {
-  "name": "argui",
+  "name": "gui4cli",
   "version": "0.0.0",
   "description": "Turn a Node.js CLI script into a desktop form app — inputs, run button, live output. Placeholder release; the CLI is not ready yet.",
   "type": "module",
   "bin": {
+    "gui4cli": "bin/argui.js",
     "argui": "bin/argui.js"
   },
   "files": [

@@ -209,7 +209,17 @@
       "decision": "Publish as unscoped npm package argui",
       "rationale": "registry.npmjs.org/argui is 404; npm search has no matches; can-i-publish similarity probe returned available. Real publish later returned 403 similar to arg, args, argv.",
       "alternatives_considered": ["@catalyst-forge/argui as default"],
-      "status": "revisit"
+      "status": "superseded",
+      "superseded_by": "d10"
+    },
+    {
+      "id": "d10",
+      "timestamp": "2026-08-13T22:42:00",
+      "phase": "1-architecture",
+      "decision": "Try unscoped npm name gui4cli; keep product name ArgUI and argui bin",
+      "rationale": "argui failed similarity. gui4cli is registry-free with no hyphen twin. Real publish is the only proof.",
+      "alternatives_considered": ["@acmegeek/argui", "@catalyst-forge/argui", "getargui", "cligui", "guicli"],
+      "status": "active"
     }
   ],
   "gotchas": [
