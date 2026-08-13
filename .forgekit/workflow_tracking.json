@@ -2,7 +2,7 @@
   "project": {
     "name": "ArgUI",
     "created": "2026-08-10",
-    "description": "CLI → desktop UI generator: turn Node scripts with CLI args into lightweight desktop apps with auto forms, live output, and optional packaging.",
+    "description": "CLI → desktop UI generator (npm: gui4cli). Turn Node scripts with CLI args into lightweight desktop apps with auto forms, live output, and optional packaging.",
     "archetype": "product",
     "status": "active"
   },
@@ -25,7 +25,8 @@
       "notes": [
         "ForgeKit MCP greenfield kickoff completed.",
         "docs/GENESIS.md is the single product spec (v1 + v2 folded; CLI name argui).",
-        "docs/PHASE_1_BRIEF.md locked 2026-08-13. User accepted stack, platforms, hybrid detect, folder-first --build. npm name argui available (registry + similarity probe).",
+        "docs/PHASE_1_BRIEF.md locked 2026-08-13. User accepted stack, platforms, hybrid detect, folder-first --build.",
+        "gui4cli@0.0.0 published to npm 2026-08-13. Repo/folder rename to gui4cli pending. See CHAT_CONTINUE.md.",
         "Phase 1 exit criteria look satisfied. Do not set currentPhase to 2-scaffolding until the user explicitly starts Phase 2."
       ]
     },
@@ -216,8 +217,8 @@
       "id": "d10",
       "timestamp": "2026-08-13T22:42:00",
       "phase": "1-architecture",
-      "decision": "Try unscoped npm name gui4cli; keep product name ArgUI and argui bin",
-      "rationale": "argui failed similarity. gui4cli is registry-free with no hyphen twin. Real publish is the only proof.",
+      "decision": "Unscoped npm name is gui4cli; product name ArgUI; argui bin alias",
+      "rationale": "argui failed similarity. User published gui4cli@0.0.0 successfully on 2026-08-13.",
       "alternatives_considered": ["@acmegeek/argui", "@catalyst-forge/argui", "getargui", "cligui", "guicli"],
       "status": "active"
     }
@@ -227,7 +228,7 @@
       "timestamp": "2026-08-13T22:33:00",
       "phase": "1-architecture",
       "issue": "Unscoped argui is 404 on the registry and passed can-i-publish, but npm publish returned 403: too similar to arg, args, argv. Dry-run and the probe both missed this.",
-      "resolution": "Need a scoped name (@acmegeek/argui or @catalyst-forge/argui) or a different unscoped name. Product name ArgUI can stay.",
+      "resolution": "Published unscoped gui4cli@0.0.0. Product name ArgUI can stay. Do not trust dry-run or can-i-publish for similarity.",
       "category": "tooling"
     }
   ],
@@ -255,6 +256,12 @@
       "phase": "1-architecture",
       "summary": "User locked PHASE_1_BRIEF.md. Confirmed npm name argui (registry + similarity probe). Phase 1 exit criteria met; awaiting explicit Phase 2 start.",
       "outcome": "Brief locked. Ready to scaffold when user says go."
+    },
+    {
+      "date": "2026-08-13",
+      "phase": "1-architecture",
+      "summary": "gui4cli@0.0.0 published. Wrote CHAT_CONTINUE.md for folder/repo rename (argui → gui4cli). Phase 2 not started.",
+      "outcome": "Handoff file at repo root. User will rename folder and reopen Cursor."
     }
   ]
 }

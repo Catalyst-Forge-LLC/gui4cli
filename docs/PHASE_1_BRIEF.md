@@ -76,7 +76,7 @@ _Confirmed 2026-08-13._
 | Auth / storage | None | confirmed | Explicit non-goal. |
 | Arg schema | Zod (or equivalent) for detected fields + config | confirmed | Code owns structure; validate config at the boundary. |
 | Styling | Small CSS in the generated window | confirmed | Readable type, keyboard (Tab, Enter to run). |
-| Deploy / distribute | npm package `gui4cli` (unscoped); product name ArgUI; Windows-first packaged app later | confirmed | Unscoped `argui` failed npm similarity (too close to arg/args/argv). Trying `gui4cli` as the publish name. Instant GUI does not require an installer. |
+| Deploy / distribute | npm package `gui4cli` (unscoped); product name ArgUI; Windows-first packaged app later | confirmed | `gui4cli@0.0.0` is live. Unscoped `argui` failed similarity (arg/args/argv). Instant GUI does not require an installer. |
 | CI | GitHub Actions (lint/test) when the spine exists | confirmed | Not a v1 user-facing requirement. |
 | Fixtures | Sample Commander + yargs scripts in-repo | confirmed | Hero-flow proof without a customer script. |
 
@@ -183,7 +183,7 @@ Skipped — no LLM-produced content.
 | Q2 | Instant GUI platforms | **Locked.** Instant GUI wherever windowd works; packaged `.exe` is Windows-first. |
 | Q3 | Detect strategy | **Locked.** Hybrid: static Commander/yargs first, `--help` only as fallback. |
 | Q4 | `--build` depth in v1 | **Locked.** Generated project folder first; real `.exe` later. |
-| Q5 | npm name | **Updated.** Unscoped `argui` rejected at publish (similar to arg/args/argv). Trying unscoped `gui4cli`; product and `argui` bin stay. |
+| Q5 | npm name | **Locked.** Unscoped `gui4cli@0.0.0` published 2026-08-13. Product name ArgUI; `argui` remains a bin alias. Unscoped `argui` is blocked by npm similarity. |
 | Q6 | Dangerous scripts | **Locked.** Show command preview (argv + cwd) before first Run. No sandbox. |
 
 ---
