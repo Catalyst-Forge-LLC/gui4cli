@@ -12,19 +12,21 @@
       "status": "in_progress",
       "startedAt": "2026-08-10",
       "completedAt": null,
-      "exitCriteriaMet": [],
+      "exitCriteriaMet": [
+        "First feature batch defined",
+        "Major decisions recorded in workflow_tracking.json decisions[]"
+      ],
       "exitCriteriaRemaining": [
         "Tech choices confirmed",
         "Folder structure confirmed",
         "Data model shape confirmed",
-        "First feature batch defined",
         "Claude's understanding verified by user",
-        "PHASE_1_BRIEF.md created, complete, and locked (docs/)",
-        "Major decisions recorded in workflow_tracking.json decisions[]"
+        "PHASE_1_BRIEF.md created, complete, and locked (docs/)"
       ],
       "notes": [
         "ForgeKit MCP greenfield kickoff completed.",
-        "docs/GENESIS.md is the single product spec (v1 + v2 folded; CLI name argui)."
+        "docs/GENESIS.md is the single product spec (v1 + v2 folded; CLI name argui).",
+        "docs/PHASE_1_BRIEF.md drafted from genesis (2026-08-13). Status draft — awaiting user lock on stack, platforms, and detect strategy."
       ]
     },
     "2-scaffolding": {
@@ -43,7 +45,9 @@
         "IDEAS.md created (from ForgeKit template)",
         "Phase 2 doc scope only per WORKFLOW §1a (no premature extra templates)"
       ],
-      "notes": []
+      "notes": [
+        "Phase 2 spine for this product is CLI + window hero flow (npx argui fixture), not web CRUD/PocketBase. Remap exit criteria when Phase 2 starts."
+      ]
     },
     "3-stabilization": {
       "status": "not_started",
@@ -125,7 +129,80 @@
       "notes": []
     }
   },
-  "decisions": [],
+  "decisions": [
+    {
+      "id": "d1",
+      "timestamp": "2026-08-13T18:09:00",
+      "phase": "1-architecture",
+      "decision": "Local CLI + desktop window product; no web SaaS stack",
+      "rationale": "Genesis is npx argui → form → spawn. PocketBase/auth would be unused architecture.",
+      "alternatives_considered": ["SvelteKit + PocketBase + auth", "static web wrapper"],
+      "status": "active"
+    },
+    {
+      "id": "d2",
+      "timestamp": "2026-08-13T18:09:00",
+      "phase": "1-architecture",
+      "decision": "CLI / package name is argui",
+      "rationale": "Folded genesis and repo name; drop clidesk.",
+      "alternatives_considered": ["clidesk"],
+      "status": "active"
+    },
+    {
+      "id": "d3",
+      "timestamp": "2026-08-13T18:09:00",
+      "phase": "1-architecture",
+      "decision": "Instant GUI is the v1 hero; project/build are secondary",
+      "rationale": "Under-30-seconds goal requires an ephemeral window, not a generated repo as the only mode.",
+      "alternatives_considered": ["Project-folder generation only"],
+      "status": "active"
+    },
+    {
+      "id": "d4",
+      "timestamp": "2026-08-13T18:09:00",
+      "phase": "1-architecture",
+      "decision": "MVP desktop shell is windowd (or equivalent Node + webview); Neutralino/Tauri later",
+      "rationale": "Full Node access in the runner and faster iteration than Tauri for a script wrapper.",
+      "alternatives_considered": ["Neutralino first", "Tauri first", "Electron"],
+      "status": "active"
+    },
+    {
+      "id": "d5",
+      "timestamp": "2026-08-13T18:09:00",
+      "phase": "1-architecture",
+      "decision": "Never rewrite the original script; spawn and stream",
+      "rationale": "The CLI remains the source of truth; ArgUI is a wrapper.",
+      "alternatives_considered": ["Transpile or inject GUI code into the script"],
+      "status": "active"
+    },
+    {
+      "id": "d6",
+      "timestamp": "2026-08-13T18:09:00",
+      "phase": "1-architecture",
+      "decision": "Detection is a code-owned schema merged with optional config; no LLM inference",
+      "rationale": "CLI metadata is structured; config is the escape hatch for odd scripts.",
+      "alternatives_considered": ["LLM flag inference", "help-text-only parsing"],
+      "status": "active"
+    },
+    {
+      "id": "d7",
+      "timestamp": "2026-08-13T18:09:00",
+      "phase": "1-architecture",
+      "decision": "Windows-first for packaged apps",
+      "rationale": "Genesis calls out .exe; macOS/Linux instant-GUI support is still an open question.",
+      "alternatives_considered": ["All desktop platforms in v1"],
+      "status": "active"
+    },
+    {
+      "id": "d8",
+      "timestamp": "2026-08-13T18:09:00",
+      "phase": "1-architecture",
+      "decision": "No LLM, live search, multi-tenant, or document exports in v1",
+      "rationale": "Not in the product; prevents Default-A web intake from leaking into scaffold.",
+      "alternatives_considered": ["ForgeKit default web stack"],
+      "status": "active"
+    }
+  ],
   "gotchas": [],
   "sessions": [
     {
@@ -139,6 +216,12 @@
       "phase": "1-architecture",
       "summary": "Folded GENESIS_v2.md into docs/GENESIS.md as the single what-not-how spec.",
       "outcome": "Canonical genesis: ArgUI CLI name, hero flow, detection table, UI structure, non-goals."
+    },
+    {
+      "date": "2026-08-13",
+      "phase": "1-architecture",
+      "summary": "Drafted docs/PHASE_1_BRIEF.md from genesis; logged D1–D8. Brief remains draft pending user lock.",
+      "outcome": "Need confirmation on stack, platforms, detect strategy, and --build depth before Phase 2."
     }
   ]
 }
