@@ -207,12 +207,20 @@
       "timestamp": "2026-08-13T22:13:00",
       "phase": "1-architecture",
       "decision": "Publish as unscoped npm package argui",
-      "rationale": "registry.npmjs.org/argui is 404; npm search has no matches; can-i-publish similarity probe returned available for argui and @catalyst-forge/argui. npm publish --dry-run does not exercise the similarity filter.",
+      "rationale": "registry.npmjs.org/argui is 404; npm search has no matches; can-i-publish similarity probe returned available. Real publish later returned 403 similar to arg, args, argv.",
       "alternatives_considered": ["@catalyst-forge/argui as default"],
-      "status": "active"
+      "status": "revisit"
     }
   ],
-  "gotchas": [],
+  "gotchas": [
+    {
+      "timestamp": "2026-08-13T22:33:00",
+      "phase": "1-architecture",
+      "issue": "Unscoped argui is 404 on the registry and passed can-i-publish, but npm publish returned 403: too similar to arg, args, argv. Dry-run and the probe both missed this.",
+      "resolution": "Need a scoped name (@acmegeek/argui or @catalyst-forge/argui) or a different unscoped name. Product name ArgUI can stay.",
+      "category": "tooling"
+    }
+  ],
   "sessions": [
     {
       "date": "2026-08-10",
