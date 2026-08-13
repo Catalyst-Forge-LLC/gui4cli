@@ -1,4 +1,4 @@
-**Project Spec: ArgUI — CLI → Desktop UI Generator**
+**Project Spec: GUI4CLI — CLI → Desktop UI Generator**
 
 Initial Agent Chat: https://grok.com/c/6aa6319e-cbd8-42a8-9dcf-8eefc98b80ef?rid=e80053a7-d22b-4de5-b5cb-35cef72a53ad
 
@@ -44,7 +44,7 @@ Generation:
 ↓
 
 Output:
-  - Dev mode: `npx argui my-script.js` → opens window immediately
+  - Dev mode: `npx gui4cli my-script.js` → opens window immediately
   - Project mode: generates a reusable folder
   - Build mode: generates a packageable project or single executable
 ```
@@ -55,7 +55,7 @@ Output:
 
 1. **Instant GUI (hero / happy path)**
    ```bash
-   npx argui my-script.js
+   npx gui4cli my-script.js
    ```
    - Detects arguments
    - Opens a desktop window with a generated form
@@ -64,16 +64,16 @@ Output:
 
 2. **Project mode**
    ```bash
-   npx argui .
+   npx gui4cli .
    # or
-   npx argui --entry bin/cli.js
+   npx gui4cli --entry bin/cli.js
    ```
    - Looks at `package.json` `bin` / `main`
    - Generates a reusable project folder that can be developed further or packaged
 
 3. **Build / Distribute**
    ```bash
-   npx argui my-script.js --build
+   npx gui4cli my-script.js --build
    ```
    - Produces a self-contained desktop app (or at least a ready-to-package windowd/Neutralino project)
    - Optional: single `.exe` for Windows
@@ -85,7 +85,7 @@ Output:
 **Argument sources (priority order)**
 1. Commander.js / yargs definitions (preferred — richest metadata)
 2. Simple JSDoc / `@param` style comments
-3. Manual config file (`argui.config.js` or `argui.json`) or front-matter in the script
+3. Manual config file (`gui4cli.config.js` or `gui4cli.json`) or front-matter in the script
 4. Fallback: basic `process.argv` heuristics + help text parsing
 
 **Supported argument shapes (MVP)**
@@ -144,7 +144,7 @@ Design goal: feel like a lightweight utility, not a full IDE. Minimal chrome, re
 Users can influence generation without changing the original script:
 
 ```js
-// argui.config.js (optional)
+// gui4cli.config.js (optional)
 export default {
   title: "Image Resizer",
   description: "Batch resize images",
@@ -203,8 +203,8 @@ Output modes:
 - Basic form generation (string / number / boolean / file / choice)
 - Live stdout streaming, exit code, duration, cancel
 - windowd backend
-- `npx argui <file>` works immediately
-- Optional `argui.config.js` for overrides
+- `npx gui4cli <file>` works immediately
+- Optional `gui4cli.config.js` for overrides
 - Detect `package.json` `bin` / `main` when given a directory
 
 **Later**
@@ -227,7 +227,7 @@ Output modes:
 - Replacing Electron for large production apps
 - Accounts, cloud sync, multi-tenant SaaS, or a hosted web app
 
-ArgUI optimizes for “I have a useful script, I want a usable form in under a minute.”
+GUI4CLI optimizes for “I have a useful script, I want a usable form in under a minute.”
 
 ---
 
@@ -236,7 +236,7 @@ ArgUI optimizes for “I have a useful script, I want a usable form in under a m
 - Works on a typical Commander or yargs script with zero config
 - Generated form is understandable by a non-developer
 - Live output feels responsive
-- `npx argui script.js` is the happy path and just works
+- `npx gui4cli script.js` is the happy path and just works
 - The original script remains the source of truth
 - Zero-to-usable GUI in under 30 seconds for simple scripts
 
@@ -252,7 +252,7 @@ ArgUI optimizes for “I have a useful script, I want a usable form in under a m
 A data-cleaning script with 7–8 flags and required paths. Instead of a README full of examples, you ship a small desktop form with a big Process button.
 
 **3. Prototyping before building a real app**
-You validate the logic as a CLI first. When people ask for a GUI, you run ArgUI instead of rewriting everything.
+You validate the logic as a CLI first. When people ask for a GUI, you run GUI4CLI instead of rewriting everything.
 
 **4. Quick wrappers for existing packages**
 Wrap an existing npm CLI (ffmpeg helpers, image processors, markdown converters, etc.) so the common flags become a permanent little app on your desktop.

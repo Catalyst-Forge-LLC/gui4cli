@@ -4,11 +4,11 @@ This chat was about to die because the folder/repo is being renamed. **Read this
 
 ## What this project is
 
-**Product working name:** ArgUI  
+**Product name:** GUI4CLI  
 **npm package (published):** `gui4cli@0.0.0` — https://www.npmjs.com/package/gui4cli  
 **Pitch:** Turn a Node.js CLI script into a desktop form (inputs, Run, live stdout/stderr) without rewriting the script. Hero: `npx gui4cli my-script.js` in under 30 seconds.
 
-Unscoped **`argui` is not publishable** (npm 403: too similar to `arg`, `args`, `argv`). Keep the product name ArgUI if the user wants; the install name is `gui4cli`. Bins in the placeholder: `gui4cli` and `argui`.
+Unscoped **`argui` is not publishable** (npm 403: too similar to `arg`, `args`, `argv`). Product name is **GUI4CLI**; install name is `gui4cli`. Bins in the placeholder: `gui4cli` (primary) and `argui` (alias).
 
 ## Where we left off (2026-08-13)
 

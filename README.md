@@ -1,4 +1,4 @@
-# ArgUI
+# GUI4CLI
 
 Turn a Node.js CLI script into a simple desktop form — inputs, a Run button, and live output — without rewriting the script.
 

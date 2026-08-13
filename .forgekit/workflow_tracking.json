@@ -1,6 +1,6 @@
 {
   "project": {
-    "name": "ArgUI",
+    "name": "GUI4CLI",
     "created": "2026-08-10",
     "description": "CLI → desktop UI generator (npm: gui4cli). Turn Node scripts with CLI args into lightweight desktop apps with auto forms, live output, and optional packaging.",
     "archetype": "product",
@@ -24,9 +24,10 @@
       "exitCriteriaRemaining": [],
       "notes": [
         "ForgeKit MCP greenfield kickoff completed.",
-        "docs/GENESIS.md is the single product spec (v1 + v2 folded; CLI name argui).",
+        "docs/GENESIS.md is the single product spec (v1 + v2 folded; product name GUI4CLI, CLI gui4cli).",
         "docs/PHASE_1_BRIEF.md locked 2026-08-13. User accepted stack, platforms, hybrid detect, folder-first --build.",
-        "gui4cli@0.0.0 published to npm 2026-08-13. Repo/folder rename to gui4cli pending. See CHAT_CONTINUE.md.",
+        "gui4cli@0.0.0 published to npm 2026-08-13. Local folder is gui4cli; GitHub remote may still be argui. See CHAT_CONTINUE.md.",
+        "Product name is GUI4CLI (was ArgUI). User confirmed 2026-08-13. See decision d11.",
         "Phase 1 exit criteria look satisfied. Do not set currentPhase to 2-scaffolding until the user explicitly starts Phase 2."
       ]
     },
@@ -47,7 +48,7 @@
         "Phase 2 doc scope only per WORKFLOW §1a (no premature extra templates)"
       ],
       "notes": [
-        "Phase 2 spine for this product is CLI + window hero flow (npx argui fixture), not web CRUD/PocketBase. Remap exit criteria when Phase 2 starts."
+        "Phase 2 spine for this product is CLI + window hero flow (npx gui4cli fixture), not web CRUD/PocketBase. Remap exit criteria when Phase 2 starts."
       ]
     },
     "3-stabilization": {
@@ -147,7 +148,8 @@
       "decision": "CLI / package name is argui",
       "rationale": "Folded genesis and repo name; drop clidesk.",
       "alternatives_considered": ["clidesk"],
-      "status": "active"
+      "status": "superseded",
+      "superseded_by": "d11"
     },
     {
       "id": "d3",
@@ -172,7 +174,7 @@
       "timestamp": "2026-08-13T18:09:00",
       "phase": "1-architecture",
       "decision": "Never rewrite the original script; spawn and stream",
-      "rationale": "The CLI remains the source of truth; ArgUI is a wrapper.",
+      "rationale": "The CLI remains the source of truth; GUI4CLI is a wrapper.",
       "alternatives_considered": ["Transpile or inject GUI code into the script"],
       "status": "active"
     },
@@ -220,6 +222,16 @@
       "decision": "Unscoped npm name is gui4cli; product name ArgUI; argui bin alias",
       "rationale": "argui failed similarity. User published gui4cli@0.0.0 successfully on 2026-08-13.",
       "alternatives_considered": ["@acmegeek/argui", "@catalyst-forge/argui", "getargui", "cligui", "guicli"],
+      "status": "superseded",
+      "superseded_by": "d11"
+    },
+    {
+      "id": "d11",
+      "timestamp": "2026-08-13T22:53:00",
+      "phase": "1-architecture",
+      "decision": "Product name is GUI4CLI; npm/npx/primary bin is gui4cli; argui is an optional alias only",
+      "rationale": "User confirmed the product is called GUI4CLI, not ArgUI. Config files follow the product: gui4cli.config.js / gui4cli.json.",
+      "alternatives_considered": ["Keep ArgUI as the product name with gui4cli as install-only"],
       "status": "active"
     }
   ],
@@ -262,6 +274,12 @@
       "phase": "1-architecture",
       "summary": "gui4cli@0.0.0 published. Wrote CHAT_CONTINUE.md for folder/repo rename (argui → gui4cli). Phase 2 not started.",
       "outcome": "Handoff file at repo root. User will rename folder and reopen Cursor."
+    },
+    {
+      "date": "2026-08-13",
+      "phase": "1-architecture",
+      "summary": "User confirmed product name is GUI4CLI (was ArgUI). Updated brief, genesis, tracking (d11). Phase 2 not started.",
+      "outcome": "Name aligned. Still waiting for explicit Phase 2 start."
     }
   ]
 }

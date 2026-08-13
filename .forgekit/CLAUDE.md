@@ -1,4 +1,4 @@
-# Claude / coding-agent notes (ArgUI)
+# Claude / coding-agent notes (GUI4CLI)
 
 Same commit policy as `.forgekit/AGENTS.md`:
 

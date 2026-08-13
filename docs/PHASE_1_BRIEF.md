@@ -1,11 +1,12 @@
-# ArgUI — Phase 1 architecture brief
+# GUI4CLI — Phase 1 architecture brief
 
 _Structured capture of planning and architecture **before** code scaffolding. Goal: Phase 2 (or a new agent/session) can start from this file + `.forgekit/workflow_tracking.json` without re-reading the whole Phase 1 chat._
 
 **Status:** `locked`  
 **Last updated:** 2026-08-13  
 **Source:** `docs/GENESIS.md` (v1 + v2 folded)  
-**Locked by:** user confirmation (2026-08-13) — proposed stack, platforms, detect strategy, and `--build` depth accepted.
+**Locked by:** user confirmation (2026-08-13) — proposed stack, platforms, detect strategy, and `--build` depth accepted.  
+**Name amendment (2026-08-13):** product is **GUI4CLI** (was ArgUI). npm / `npx` / primary bin stay `gui4cli`. Architecture otherwise unchanged.
 
 ---
 
@@ -13,16 +14,16 @@ _Structured capture of planning and architecture **before** code scaffolding. Go
 
 **What we are building (2–4 sentences):**
 
-ArgUI turns a Node.js CLI script (or package entry) into a lightweight desktop form app without rewriting the script. It detects arguments, opens a window with labeled fields, runs the original process, and streams live output plus exit code. The original script stays the source of truth. Goal: a usable GUI in under 30 seconds for a typical Commander or yargs script.
+GUI4CLI turns a Node.js CLI script (or package entry) into a lightweight desktop form app without rewriting the script. It detects arguments, opens a window with labeled fields, runs the original process, and streams live output plus exit code. The original script stays the source of truth. Goal: a usable GUI in under 30 seconds for a typical Commander or yargs script.
 
-**Project archetype:** `product` — a local developer tool others can install (`npx argui`). Not an internal-only app and not a one-shot. No accounts, tenancy, or payments in v1; later-phase payment/business-plan rows stay in tracking until we explicitly prune them.
+**Project archetype:** `product` — a local developer tool others can install (`npx gui4cli`). Not an internal-only app and not a one-shot. No accounts, tenancy, or payments in v1; later-phase payment/business-plan rows stay in tracking until we explicitly prune them.
 
 **What “done” looks like for v1 (measurable where possible):**
 
-- `npx argui fixtures/resize.js` (or equivalent Commander/yargs fixture) opens a window with the detected fields in under 30 seconds.
+- `npx gui4cli fixtures/resize.js` (or equivalent Commander/yargs fixture) opens a window with the detected fields in under 30 seconds.
 - A non-developer can fill the form, click Run, see live stdout/stderr, then see exit code + duration.
 - Cancel stops the child process.
-- Optional `argui.config.js` can override labels/types without editing the script.
+- Optional `gui4cli.config.js` can override labels/types without editing the script.
 - The original script file is never modified.
 
 ---
@@ -36,12 +37,12 @@ ArgUI turns a Node.js CLI script (or package entry) into a lightweight desktop f
 
 **The single most important workflow (hero flow) end-to-end:**
 
-`npx argui my-script.js` → detect args (Commander/yargs first) → open one desktop window → fill fields → Run → live output → exit code + duration. No project folder required.
+`npx gui4cli my-script.js` → detect args (Commander/yargs first) → open one desktop window → fill fields → Run → live output → exit code + duration. No project folder required.
 
 **Secondary workflows (if any) for v1:**
 
-- `npx argui .` or `npx argui --entry bin/cli.js` — resolve `package.json` `bin` / `main`.
-- Optional `argui.config.js` / `argui.json` / script front-matter overrides.
+- `npx gui4cli .` or `npx gui4cli --entry bin/cli.js` — resolve `package.json` `bin` / `main`.
+- Optional `gui4cli.config.js` / `gui4cli.json` / script front-matter overrides.
 - Save / reload last run values (local file only).
 - `--build` may generate a reusable project folder; a real `.exe` can slip to later if packaging is the long pole.
 
@@ -67,7 +68,7 @@ _Confirmed 2026-08-13._
 
 | Area | Choice | Status | Notes / WHY |
 | ---- | ------ | ------ | ----------- |
-| Product shape | TypeScript CLI package (`argui`) + generated desktop window | confirmed | Matches `npx argui script.js`. Not a SvelteKit/PocketBase web app. |
+| Product shape | TypeScript CLI package (`gui4cli`) + generated desktop window | confirmed | Matches `npx gui4cli script.js`. Not a SvelteKit/PocketBase web app. |
 | Language | TypeScript, ESM only (`"type": "module"`) | confirmed | Repo convention; typed source. |
 | Package manager | pnpm | confirmed | Repo convention. |
 | Desktop shell (MVP) | windowd (or equivalent Node + webview) | confirmed | Fast iteration, full Node in the runner. Neutralino/Tauri later. |
@@ -76,11 +77,11 @@ _Confirmed 2026-08-13._
 | Auth / storage | None | confirmed | Explicit non-goal. |
 | Arg schema | Zod (or equivalent) for detected fields + config | confirmed | Code owns structure; validate config at the boundary. |
 | Styling | Small CSS in the generated window | confirmed | Readable type, keyboard (Tab, Enter to run). |
-| Deploy / distribute | npm package `gui4cli` (unscoped); product name ArgUI; Windows-first packaged app later | confirmed | `gui4cli@0.0.0` is live. Unscoped `argui` failed similarity (arg/args/argv). Instant GUI does not require an installer. |
+| Deploy / distribute | npm package `gui4cli` (unscoped); product name GUI4CLI; Windows-first packaged app later | confirmed | `gui4cli@0.0.0` is live. Unscoped `argui` failed similarity (arg/args/argv). Instant GUI does not require an installer. |
 | CI | GitHub Actions (lint/test) when the spine exists | confirmed | Not a v1 user-facing requirement. |
 | Fixtures | Sample Commander + yargs scripts in-repo | confirmed | Hero-flow proof without a customer script. |
 
-**Folder shape (ArgUI repo, proposed):**
+**Folder shape (GUI4CLI repo, proposed):**
 
 ```
 src/
@@ -89,7 +90,7 @@ src/
   schema/             # shared field types (Zod)
   generate/           # form HTML + window bootstrap
   run/                # spawn, stream, cancel, cwd/env
-  config/             # argui.config.js loader
+  config/             # gui4cli.config.js loader
 fixtures/             # Commander + yargs sample scripts
 docs/                 # GENESIS, this brief
 ```
@@ -106,7 +107,7 @@ Generated app folder (when project/build mode runs) stays as in genesis: `index.
 - **Field** — name, type (`string` \| `number` \| `boolean` \| `choice` \| `file` \| `directory`), required, default, help, choices, constraints (min/max, filters).
 - **FormSpec** — title, description, fields[], option groups, window size.
 - **Run** — argv built from form values, cwd, env, startedAt, endedAt, exitCode, stdout/stderr streams.
-- **Config** — optional overrides (`argui.config.js` / `.json` / front-matter).
+- **Config** — optional overrides (`gui4cli.config.js` / `.json` / front-matter).
 - **LastRun** — last values per target, stored locally.
 
 **Relationships:**
@@ -119,7 +120,7 @@ Target → (detect + config merge) → FormSpec → (user submit) → Run. LastR
 
 1. Commander.js / yargs definitions
 2. JSDoc / `@param`
-3. `argui.config.js` / `argui.json` / script front-matter
+3. `gui4cli.config.js` / `gui4cli.json` / script front-matter
 4. `process.argv` heuristics + help text
 
 Do not attempt to reverse-engineer highly dynamic / programmatic CLIs in v1.
@@ -133,7 +134,7 @@ Do not attempt to reverse-engineer highly dynamic / programmatic CLIs in v1.
 | Node child_process | Run the original script | none | PATH, cwd, env leaks; cancel must actually kill the process tree on Windows |
 | windowd (or equiv.) | Desktop window | none | Pin a known-good approach in Phase 2; have a fallback if the package is immature |
 | Commander / yargs (read-only) | Arg metadata | none | Static parse vs execute-to-introspect is an open question (§9) |
-| npm / npx | Distribution of ArgUI itself | none | Package name `argui` must be available or scoped |
+| npm / npx | Distribution of GUI4CLI itself | none | Package name is `gui4cli` (unscoped `argui` blocked by npm similarity) |
 
 No LLM, payments, email, analytics, or search APIs in v1.
 
@@ -150,7 +151,7 @@ Skipped — no LLM-produced content.
 1. **Arg detection fidelity** — Commander/yargs configs are often built at runtime. Static parse may miss fields; executing the CLI to scrape `--help` is brittle and can have side effects.
 2. **windowd (or shell) viability** — if the MVP shell is immature, packaging and “opens a window in 30s” both slip.
 3. **Windows process cancel** — killing a spawned Node script plus its children is easy to get wrong; leftover processes break trust.
-4. **Dynamic / unusual CLIs** — users will try ffmpeg wrappers and custom parsers; v1 must fail clearly (“couldn’t detect args — add argui.config.js”) instead of generating an empty or wrong form.
+4. **Dynamic / unusual CLIs** — users will try ffmpeg wrappers and custom parsers; v1 must fail clearly (“couldn’t detect args — add gui4cli.config.js”) instead of generating an empty or wrong form.
 5. **Scope creep into a GUI framework** — themes, subcommands, watch, and extra shells can delay the hero path.
 
 ---
@@ -159,19 +160,21 @@ Skipped — no LLM-produced content.
 
 **D1. Product, not a web SaaS.** Local CLI + desktop window. Rejected: SvelteKit + PocketBase + auth. WHY: genesis is a one-command local tool; accounts would be unused architecture.
 
-**D2. CLI name is `argui`.** Rejected: `clidesk`. WHY: matches the repo and folded genesis.
+**D2. CLI name is `argui`.** Superseded 2026-08-13: product is GUI4CLI; primary command is `gui4cli`. Original rationale: matches the then-repo and folded genesis. Rejected: `clidesk`.
 
 **D3. Instant GUI is the v1 hero; project/build are secondary.** Rejected: generating a project folder as the only mode. WHY: “under 30 seconds” requires an ephemeral window.
 
 **D4. windowd (or equivalent Node + webview) for MVP; Neutralino/Tauri later.** WHY: full Node access in the runner, faster iteration. Revisit if the shell cannot open a window reliably on Windows.
 
-**D5. Original script is never rewritten; spawn + stream.** WHY: the CLI remains source of truth; ArgUI is a wrapper.
+**D5. Original script is never rewritten; spawn + stream.** WHY: the CLI remains source of truth; GUI4CLI is a wrapper.
 
 **D6. Detection is a code-owned schema (Zod), merged with optional config.** Rejected: LLM inference of flags. WHY: structured CLI metadata should not go through a model; config is the escape hatch.
 
 **D7. Windows-first for packaged apps; instant GUI should still aim to work wherever Node + the shell work.** Exact macOS/Linux support for v1 is an open question (§9).
 
 **D8. No LLM, no live search, no multi-tenant, no document exports.** WHY: not in the product; record so Phase 2 does not pull Default-A web stack.
+
+**D11. Product name is GUI4CLI.** npm / `npx` / primary bin are `gui4cli`. `argui` is an optional alias only. Config files are `gui4cli.config.js` / `gui4cli.json`. WHY: user confirmed 2026-08-13. Supersedes D2 and the ArgUI product-name part of D10.
 
 ---
 
@@ -183,7 +186,7 @@ Skipped — no LLM-produced content.
 | Q2 | Instant GUI platforms | **Locked.** Instant GUI wherever windowd works; packaged `.exe` is Windows-first. |
 | Q3 | Detect strategy | **Locked.** Hybrid: static Commander/yargs first, `--help` only as fallback. |
 | Q4 | `--build` depth in v1 | **Locked.** Generated project folder first; real `.exe` later. |
-| Q5 | npm name | **Locked.** Unscoped `gui4cli@0.0.0` published 2026-08-13. Product name ArgUI; `argui` remains a bin alias. Unscoped `argui` is blocked by npm similarity. |
+| Q5 | npm name | **Locked.** Unscoped `gui4cli@0.0.0` published 2026-08-13. Product name GUI4CLI; primary bin `gui4cli`; `argui` remains an optional alias. Unscoped `argui` is blocked by npm similarity. |
 | Q6 | Dangerous scripts | **Locked.** Show command preview (argv + cwd) before first Run. No sandbox. |
 
 ---
@@ -204,9 +207,9 @@ Skipped — no LLM-produced content.
 
 ## 11. First feature batch (post-scaffold)
 
-1. CLI entry: `argui <file>` / `argui .` / `--entry` / `--help`
+1. CLI entry: `gui4cli <file>` / `gui4cli .` / `--entry` / `--help`
 2. Detect Commander + yargs → FormSpec (Zod); fixtures for both
-3. Merge optional `argui.config.js`
+3. Merge optional `gui4cli.config.js`
 4. Open windowd window with generated form (string / number / boolean / file / choice)
 5. Run: spawn, stream stdout/stderr, exit code, duration, cancel
 6. Last-run values (local JSON)

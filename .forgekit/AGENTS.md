@@ -1,4 +1,4 @@
-# Agent guidelines (ArgUI)
+# Agent guidelines (GUI4CLI)
 
 ## Git commits
 
