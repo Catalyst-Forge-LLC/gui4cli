@@ -1,0 +1,35 @@
+{
+  "name": "argui",
+  "version": "0.0.0",
+  "description": "Turn a Node.js CLI script into a desktop form app — inputs, run button, live output. Placeholder release; the CLI is not ready yet.",
+  "type": "module",
+  "bin": {
+    "argui": "bin/argui.js"
+  },
+  "files": [
+    "bin",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Catalyst-Forge-LLC/argui.git"
+  },
+  "homepage": "https://github.com/Catalyst-Forge-LLC/argui#readme",
+  "bugs": {
+    "url": "https://github.com/Catalyst-Forge-LLC/argui/issues"
+  },
+  "keywords": [
+    "cli",
+    "desktop",
+    "gui",
+    "commander",
+    "yargs",
+    "form"
+  ],
+  "license": "MIT",
+  "author": "Catalyst Forge LLC",
+  "engines": {
+    "node": ">=20"
+  }
+}
