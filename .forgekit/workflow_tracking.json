@@ -14,19 +14,19 @@
       "completedAt": null,
       "exitCriteriaMet": [
         "First feature batch defined",
-        "Major decisions recorded in workflow_tracking.json decisions[]"
-      ],
-      "exitCriteriaRemaining": [
+        "Major decisions recorded in workflow_tracking.json decisions[]",
         "Tech choices confirmed",
         "Folder structure confirmed",
         "Data model shape confirmed",
         "Claude's understanding verified by user",
         "PHASE_1_BRIEF.md created, complete, and locked (docs/)"
       ],
+      "exitCriteriaRemaining": [],
       "notes": [
         "ForgeKit MCP greenfield kickoff completed.",
         "docs/GENESIS.md is the single product spec (v1 + v2 folded; CLI name argui).",
-        "docs/PHASE_1_BRIEF.md drafted from genesis (2026-08-13). Status draft — awaiting user lock on stack, platforms, and detect strategy."
+        "docs/PHASE_1_BRIEF.md locked 2026-08-13. User accepted stack, platforms, hybrid detect, folder-first --build. npm name argui available (registry + similarity probe).",
+        "Phase 1 exit criteria look satisfied. Do not set currentPhase to 2-scaffolding until the user explicitly starts Phase 2."
       ]
     },
     "2-scaffolding": {
@@ -201,6 +201,15 @@
       "rationale": "Not in the product; prevents Default-A web intake from leaking into scaffold.",
       "alternatives_considered": ["ForgeKit default web stack"],
       "status": "active"
+    },
+    {
+      "id": "d9",
+      "timestamp": "2026-08-13T22:13:00",
+      "phase": "1-architecture",
+      "decision": "Publish as unscoped npm package argui",
+      "rationale": "registry.npmjs.org/argui is 404; npm search has no matches; can-i-publish similarity probe returned available for argui and @catalyst-forge/argui. npm publish --dry-run does not exercise the similarity filter.",
+      "alternatives_considered": ["@catalyst-forge/argui as default"],
+      "status": "active"
     }
   ],
   "gotchas": [],
@@ -222,6 +231,12 @@
       "phase": "1-architecture",
       "summary": "Drafted docs/PHASE_1_BRIEF.md from genesis; logged D1–D8. Brief remains draft pending user lock.",
       "outcome": "Need confirmation on stack, platforms, detect strategy, and --build depth before Phase 2."
+    },
+    {
+      "date": "2026-08-13",
+      "phase": "1-architecture",
+      "summary": "User locked PHASE_1_BRIEF.md. Confirmed npm name argui (registry + similarity probe). Phase 1 exit criteria met; awaiting explicit Phase 2 start.",
+      "outcome": "Brief locked. Ready to scaffold when user says go."
     }
   ]
 }

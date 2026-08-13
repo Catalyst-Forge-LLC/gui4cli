@@ -2,10 +2,10 @@
 
 _Structured capture of planning and architecture **before** code scaffolding. Goal: Phase 2 (or a new agent/session) can start from this file + `.forgekit/workflow_tracking.json` without re-reading the whole Phase 1 chat._
 
-**Status:** `draft`  
+**Status:** `locked`  
 **Last updated:** 2026-08-13  
 **Source:** `docs/GENESIS.md` (v1 + v2 folded)  
-**Phase 1 exit:** Do not mark Phase 1 complete in `.forgekit/workflow_tracking.json` until this brief is **locked** and major commitments are in `decisions[]`.
+**Locked by:** user confirmation (2026-08-13) — proposed stack, platforms, detect strategy, and `--build` depth accepted.
 
 ---
 
@@ -63,22 +63,22 @@ ArgUI turns a Node.js CLI script (or package entry) into a lightweight desktop f
 
 ## 4. Stack and tooling
 
-_Proposed from genesis + repo conventions. Confirm before Phase 2._
+_Confirmed 2026-08-13._
 
 | Area | Choice | Status | Notes / WHY |
 | ---- | ------ | ------ | ----------- |
-| Product shape | TypeScript CLI package (`argui`) + generated desktop window | proposed | Matches `npx argui script.js`. Not a SvelteKit/PocketBase web app. |
-| Language | TypeScript, ESM only (`"type": "module"`) | proposed | Repo convention; typed source. |
-| Package manager | pnpm | proposed | Repo convention. |
-| Desktop shell (MVP) | windowd (or equivalent Node + webview) | proposed | Fast iteration, full Node in the runner. Neutralino/Tauri later. |
-| UI in the window | Generated HTML/CSS/JS (minimal chrome) | proposed | Lightweight utility, not an IDE. |
-| Persistence | Local JSON (last run / presets); no DB | proposed | Single-user, local tool. |
-| Auth / storage | None | proposed | Explicit non-goal. |
-| Arg schema | Zod (or equivalent) for detected fields + config | proposed | Code owns structure; validate config at the boundary. |
-| Styling | Small CSS in the generated window | proposed | Readable type, keyboard (Tab, Enter to run). |
-| Deploy / distribute | npm package; Windows-first packaged app later | proposed | Instant GUI does not require an installer. |
-| CI | GitHub Actions (lint/test) when the spine exists | proposed | Not a v1 user-facing requirement. |
-| Fixtures | Sample Commander + yargs scripts in-repo | proposed | Hero-flow proof without a customer script. |
+| Product shape | TypeScript CLI package (`argui`) + generated desktop window | confirmed | Matches `npx argui script.js`. Not a SvelteKit/PocketBase web app. |
+| Language | TypeScript, ESM only (`"type": "module"`) | confirmed | Repo convention; typed source. |
+| Package manager | pnpm | confirmed | Repo convention. |
+| Desktop shell (MVP) | windowd (or equivalent Node + webview) | confirmed | Fast iteration, full Node in the runner. Neutralino/Tauri later. |
+| UI in the window | Generated HTML/CSS/JS (minimal chrome) | confirmed | Lightweight utility, not an IDE. |
+| Persistence | Local JSON (last run / presets); no DB | confirmed | Single-user, local tool. |
+| Auth / storage | None | confirmed | Explicit non-goal. |
+| Arg schema | Zod (or equivalent) for detected fields + config | confirmed | Code owns structure; validate config at the boundary. |
+| Styling | Small CSS in the generated window | confirmed | Readable type, keyboard (Tab, Enter to run). |
+| Deploy / distribute | npm package `argui` (unscoped); Windows-first packaged app later | confirmed | Registry + similarity probe: `argui` and `@catalyst-forge/argui` both available (2026-08-13). Instant GUI does not require an installer. |
+| CI | GitHub Actions (lint/test) when the spine exists | confirmed | Not a v1 user-facing requirement. |
+| Fixtures | Sample Commander + yargs scripts in-repo | confirmed | Hero-flow proof without a customer script. |
 
 **Folder shape (ArgUI repo, proposed):**
 
@@ -177,14 +177,14 @@ Skipped — no LLM-produced content.
 
 ## 9. Open questions (before or during Phase 2)
 
-| # | Question | Owner / resolve by |
-| - | -------- | ------------------ |
-| Q1 | Confirm stack table in §4 (TypeScript / ESM / pnpm / windowd / Zod / no DB). | User — before Phase 2 |
-| Q2 | Instant GUI on Windows only in v1, or macOS/Linux too? | User — before Phase 2 |
-| Q3 | Detect by static parse, by running `--help`, or hybrid (static first, help fallback)? | Propose hybrid; user confirm |
-| Q4 | Does v1 `--build` need a real `.exe`, or is a generated project folder enough? | Propose folder-first; `.exe` later |
-| Q5 | npm name: `argui` vs scoped `@catalyst-forge/argui` if the name is taken. | Check at scaffold |
-| Q6 | How dangerous scripts are presented (cwd/env disclosure, no sandbox). | Default: show command preview before first Run |
+| # | Question | Resolution |
+| - | -------- | ---------- |
+| Q1 | Stack table in §4 | **Locked.** TypeScript / ESM / pnpm / windowd / Zod / no DB. |
+| Q2 | Instant GUI platforms | **Locked.** Instant GUI wherever windowd works; packaged `.exe` is Windows-first. |
+| Q3 | Detect strategy | **Locked.** Hybrid: static Commander/yargs first, `--help` only as fallback. |
+| Q4 | `--build` depth in v1 | **Locked.** Generated project folder first; real `.exe` later. |
+| Q5 | npm name | **Locked.** Unscoped `argui` — registry 404 + similarity probe available (2026-08-13). Scoped `@catalyst-forge/argui` is a fallback, not the default. |
+| Q6 | Dangerous scripts | **Locked.** Show command preview (argv + cwd) before first Run. No sandbox. |
 
 ---
 
@@ -218,7 +218,7 @@ Skipped — no LLM-produced content.
 
 ## 12. Handoff checklist (before leaving Phase 1)
 
-- [ ] User has confirmed stack, folder shape, data sketch, hero flow, and v1 boundaries
-- [ ] This brief is **locked** (no `[draft]` ambiguity) or remaining items are only in §9 Open questions
-- [ ] `.forgekit/workflow_tracking.json` updated: `decisions[]` for each major D#; `phases["1-architecture"]` notes summarize sign-off
-- [ ] Phase 2 opener will read **this file** + `.forgekit/workflow_tracking.json` first
+- [x] User has confirmed stack, folder shape, data sketch, hero flow, and v1 boundaries
+- [x] This brief is **locked** (no `[draft]` ambiguity) or remaining items are only in §9 Open questions
+- [x] `.forgekit/workflow_tracking.json` updated: `decisions[]` for each major D#; `phases["1-architecture"]` notes summarize sign-off
+- [x] Phase 2 opener will read **this file** + `.forgekit/workflow_tracking.json` first
