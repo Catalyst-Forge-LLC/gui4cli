@@ -11,14 +11,6 @@
     "README.md",
     "LICENSE"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Catalyst-Forge-LLC/argui.git"
-  },
-  "homepage": "https://github.com/Catalyst-Forge-LLC/argui#readme",
-  "bugs": {
-    "url": "https://github.com/Catalyst-Forge-LLC/argui/issues"
-  },
   "keywords": [
     "cli",
     "desktop",
