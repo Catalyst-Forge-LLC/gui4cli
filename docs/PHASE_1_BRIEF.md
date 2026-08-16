@@ -1,6 +1,6 @@
 # GUI4CLI — Phase 1 architecture brief
 
-_Structured capture of planning and architecture **before** code scaffolding. Goal: Phase 2 (or a new agent/session) can start from this file + `.forgekit/workflow_tracking.json` without re-reading the whole Phase 1 chat._
+_Structured capture of planning and architecture **before** code scaffolding. Goal: Phase 2 (or a new agent/session) can start from this file + `.forgetrail/workflow_tracking.json` without re-reading the whole Phase 1 chat._
 
 **Status:** `locked`  
 **Last updated:** 2026-08-13  
@@ -223,5 +223,5 @@ Skipped — no LLM-produced content.
 
 - [x] User has confirmed stack, folder shape, data sketch, hero flow, and v1 boundaries
 - [x] This brief is **locked** (no `[draft]` ambiguity) or remaining items are only in §9 Open questions
-- [x] `.forgekit/workflow_tracking.json` updated: `decisions[]` for each major D#; `phases["1-architecture"]` notes summarize sign-off
-- [x] Phase 2 opener will read **this file** + `.forgekit/workflow_tracking.json` first
+- [x] `.forgetrail/workflow_tracking.json` updated: `decisions[]` for each major D#; `phases["1-architecture"]` notes summarize sign-off
+- [x] Phase 2 opener will read **this file** + `.forgetrail/workflow_tracking.json` first

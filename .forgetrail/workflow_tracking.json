@@ -23,7 +23,7 @@
       ],
       "exitCriteriaRemaining": [],
       "notes": [
-        "ForgeKit MCP greenfield kickoff completed.",
+        "ForgeTrail MCP greenfield kickoff completed.",
         "docs/GENESIS.md is the single product spec (v1 + v2 folded; product name GUI4CLI, CLI gui4cli).",
         "docs/PHASE_1_BRIEF.md locked 2026-08-13. User accepted stack, platforms, hybrid detect, folder-first --build.",
         "gui4cli@0.0.0 published to npm 2026-08-13. Local folder is gui4cli; GitHub remote may still be argui. See CHAT_CONTINUE.md.",
@@ -39,15 +39,15 @@
         "CONTEXT_PROMPT.md created and populated by merging PHASE_1_BRIEF.md",
         "README.md created (how to run the CLI spine)",
         "TODO.md created and seeded from PHASE_1_BRIEF §11",
-        ".forgekit/IDEAS.md created",
-        "Phase 2 doc scope only (no extra ForgeKit templates)",
+        ".forgetrail/IDEAS.md created",
+        "Phase 2 doc scope only (no extra ForgeTrail templates)",
         "Detected fields visible in --json output for Commander and yargs fixtures",
         "pnpm dev / windowd opens the fixture window (NW.js runtime cached after first download)",
         "Hero flow in the window: form → Run → live output → exit code (user confirmed 2026-08-13)"
       ],
       "exitCriteriaRemaining": [],
       "notes": [
-        "Remapped ForgeKit web CRUD / pnpm dev criteria to CLI + windowd hero flow.",
+        "Remapped ForgeTrail web CRUD / pnpm dev criteria to CLI + windowd hero flow.",
         "Spine: npx gui4cli fixtures/resize.js → form → Run → live output.",
         "User confirmed 2026-08-13: window stays open and minimally works. Tightened layout after they could not see enough on screen."
       ]
@@ -97,7 +97,7 @@
       "completedAt": null,
       "exitCriteriaMet": [],
       "exitCriteriaRemaining": [
-        "BRAND_AND_PRODUCT.md created (from ForgeKit template)",
+        "BRAND_AND_PRODUCT.md created (from ForgeTrail template)",
         "TODO reorganized by brand value pillars",
         "Features mapped to brand pillars",
         "Gap between brand promise and product identified",
@@ -112,21 +112,21 @@
       "completedAt": null,
       "exitCriteriaMet": [],
       "exitCriteriaRemaining": [
-        "CODE_QUALITY.md produced (from ForgeKit template) and critical findings fixed",
-        "BLACK_HAT_REPORT.md produced (via ForgeKit security audit) and critical/high findings fixed",
+        "CODE_QUALITY.md produced (from ForgeTrail template) and critical findings fixed",
+        "BLACK_HAT_REPORT.md produced (via ForgeTrail security audit) and critical/high findings fixed",
         "All findings triaged into TODO.md with P0/P1/P2 priority",
         "All LLM outputs checked against field size limits",
         "No silent failures in core workflows (grep for empty catch blocks)",
         "All API routes return errors in consistent format",
         "All user input validated (centralized Zod schemas recommended)",
         "No unvalidated as-any casts on critical paths",
-        "DEPLOYMENT.md created (from ForgeKit template)",
-        "BUSINESS_PLAN.md created if pursuing paid users (from ForgeKit template)",
-        "TEST_PLAN.md complete or extended (from ForgeKit template)",
+        "DEPLOYMENT.md created (from ForgeTrail template)",
+        "BUSINESS_PLAN.md created if pursuing paid users (from ForgeTrail template)",
+        "TEST_PLAN.md complete or extended (from ForgeTrail template)",
         "TECHNICAL_REFERENCE.md complete and current",
         "Auth flow works end to end (if applicable)",
         "Payment flow works end to end (if applicable)",
-        "Docs alignment audit passed (via ForgeKit docs-alignment audit)",
+        "Docs alignment audit passed (via ForgeTrail docs-alignment audit)",
         "All documentation consolidated and cross-referenced"
       ],
       "notes": []
@@ -203,7 +203,7 @@
       "phase": "1-architecture",
       "decision": "No LLM, live search, multi-tenant, or document exports in v1",
       "rationale": "Not in the product; prevents Default-A web intake from leaking into scaffold.",
-      "alternatives_considered": ["ForgeKit default web stack"],
+      "alternatives_considered": ["ForgeTrail default web stack"],
       "status": "active"
     },
     {
@@ -279,7 +279,7 @@
     {
       "date": "2026-08-10",
       "phase": "1-architecture",
-      "summary": "ForgeKit greenfield kickoff: tracking + Cursor rules + trailer guardrails; genesis at docs/GENESIS.md.",
+      "summary": "ForgeTrail greenfield kickoff: tracking + Cursor rules + trailer guardrails; genesis at docs/GENESIS.md.",
       "outcome": "Ready for Phase 1 intake / brief draft from genesis."
     },
     {

@@ -109,7 +109,7 @@ Target → detect + config merge → FormSpec → user submit → Run. LastRun k
 ## Anti-Patterns to Avoid
 
 - Treating `can-i-publish` or `npm publish --dry-run` as proof of npm's similarity filter (`argui` failed after both said yes).
-- Scaffolding a SvelteKit + PocketBase app because ForgeKit templates default to that.
+- Scaffolding a SvelteKit + PocketBase app because ForgeTrail templates default to that.
 - Frozen window with no status while a script runs.
 - Empty form when detect fails (must tell the user to add a config file).
 

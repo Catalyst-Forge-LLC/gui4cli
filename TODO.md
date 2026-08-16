@@ -1,6 +1,6 @@
 # GUI4CLI — Feature Backlog
 
-Seeded from `docs/PHASE_1_BRIEF.md` §11. Flat list until Phase 6 (brand pillars). Process `.forgekit/IDEAS.md` here periodically.
+Seeded from `docs/PHASE_1_BRIEF.md` §11. Flat list until Phase 6 (brand pillars). Process `.forgetrail/IDEAS.md` here periodically.
 
 ## Hero path (Phase 2)
 
