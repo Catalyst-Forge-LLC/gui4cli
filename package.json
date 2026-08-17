@@ -19,7 +19,8 @@
     "build": "tsc",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "prepare": "tsc"
+    "prepare": "tsc",
+    "prepublishOnly": "node scripts/publish-gate.mjs && pnpm test && pnpm build"
   },
   "keywords": [
     "cli",
