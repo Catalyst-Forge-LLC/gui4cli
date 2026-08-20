@@ -27,4 +27,4 @@ Seeded from `docs/PHASE_1_BRIEF.md` §11. Flat list until Phase 6 (brand pillars
 
 - [ ] GitHub Actions lint/test when the spine is stable
 - [ ] Drop or keep the `argui` bin alias (product decision)
-- [ ] Point `origin` at `Catalyst-Forge-LLC/gui4cli` after the GitHub rename
+- [x] Point `origin` at `Catalyst-Forge-LLC/gui4cli` after the GitHub rename

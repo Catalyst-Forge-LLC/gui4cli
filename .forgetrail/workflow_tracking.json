@@ -26,7 +26,7 @@
         "ForgeTrail MCP greenfield kickoff completed.",
         "docs/GENESIS.md is the single product spec (v1 + v2 folded; product name GUI4CLI, CLI gui4cli).",
         "docs/PHASE_1_BRIEF.md locked 2026-08-13. User accepted stack, platforms, hybrid detect, folder-first --build.",
-        "gui4cli@0.0.0 published to npm 2026-08-13. Local folder is gui4cli; GitHub remote may still be argui. See CHAT_CONTINUE.md.",
+        "gui4cli@0.0.0 published to npm 2026-08-13. GitHub repo is Catalyst-Forge-LLC/gui4cli (renamed from argui). Origin updated 2026-08-20.",
         "Product name is GUI4CLI (was ArgUI). User confirmed 2026-08-13. See decision d11.",
         "User started Phase 2 on 2026-08-13 (\"Please start development\")."
       ]
