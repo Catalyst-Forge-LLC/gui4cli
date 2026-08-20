@@ -18,7 +18,7 @@ Seeded from `docs/PHASE_1_BRIEF.md` §11. Flat list until Phase 6 (brand pillars
 
 ## After the hero path is green
 
-- [ ] Project-folder generate (`--build`) if 1–7 stay solid
+- [x] Project-folder generate (`--build`) if 1–7 stay solid
 - [ ] Windows `.exe` only after the instant GUI is trustworthy
 - [ ] JSDoc / `@param` detection beyond the first-pass parser
 - [ ] Directory picker that feels native (not only a text path)

@@ -64,6 +64,7 @@ Target → detect + config merge → FormSpec → user submit → Run. LastRun k
 - **D8 (Phase 1):** No LLM, live search, multi-tenant, or document exports in v1.
 - **D11 (Phase 1):** Product name GUI4CLI; npm/npx/primary bin `gui4cli`; `argui` optional alias. Config: `gui4cli.config.js` / `gui4cli.json`.
 - **D12 (Phase 2):** Open the window by writing a temp folder and spawning `windowd`. WHY: matches windowd's `index.html` + Node-in-renderer model; first launch may download ~200 MB NW.js.
+- **D13 (Phase 2):** `--build` writes a reusable GUI folder that wraps the original script in place. WHY: the script's `node_modules` must still resolve; a copied file would lose Commander/yargs. No `.exe` in this step.
 
 ## Critical Patterns
 
@@ -102,11 +103,11 @@ Target → detect + config merge → FormSpec → user submit → Run. LastRun k
 
 ### In Progress
 
-- Phase 2 spine works end to end. Window layout is now two-column (960×620) so more of the form and output stay on screen.
+- Phase 2 spine works end to end. `--build` writes a reusable windowd folder that wraps the original script in place.
 
 ### Not Started
 
-- `--build` project folder, Windows `.exe`, JSDoc depth, Neutralino/Tauri.
+- Windows `.exe`, JSDoc depth, Neutralino/Tauri.
 
 ## Anti-Patterns to Avoid
 
@@ -120,6 +121,7 @@ Target → detect + config merge → FormSpec → user submit → Run. LastRun k
 ### Session 2026-08-20
 
 - First `pnpm dev` after a pause often failed to show the window; the second try worked. Cleared all inspector `NODE_OPTIONS` for windowd, disabled Vite HMR, retry once on a sub-5s exit.
+- `--build` writes a reusable GUI folder (`<title>-gui`) that wraps the original script in place.
 
 ### Session 2026-08-13
 

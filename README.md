@@ -24,6 +24,15 @@ If the window flashes and closes, run `pnpm dev` from a normal terminal (not Cur
 
 `--json` prints the detected form and exits (no window). Use that in CI or when you cannot open a GUI.
 
+`--build` writes a reusable project folder (GUI shell + `package.json`). It does not create an `.exe`, and it does not rewrite the original script.
+
+```bash
+pnpm exec tsx src/cli.ts fixtures/resize.js --build
+pnpm exec tsx src/cli.ts fixtures/resize.js --build --out ./my-resize-gui
+```
+
+Then `npx --yes windowd` inside that folder.
+
 ### Try a script
 
 ```bash
@@ -49,6 +58,7 @@ TODO.md
 | ------- | ----------- |
 | Detect | Static Commander / yargs, then JSDoc, config, `--help` |
 | Instant GUI | One windowd window, no generated repo required |
+| `--build` | Reusable project folder; run later with `npx windowd` |
 | Run | Spawn the original script; stream stdout/stderr; cancel |
 | Last run | Values stored under `~/.gui4cli/lastrun/` |
 

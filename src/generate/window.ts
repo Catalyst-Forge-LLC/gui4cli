@@ -12,8 +12,8 @@ export type WindowPayload = {
   platform: NodeJS.Platform;
 };
 
-export async function writeWindowApp(payload: WindowPayload): Promise<string> {
-  const dir = join(tmpdir(), `gui4cli-window-${Date.now()}`);
+export async function writeWindowApp(payload: WindowPayload, dest?: string): Promise<string> {
+  const dir = dest ?? join(tmpdir(), `gui4cli-window-${Date.now()}`);
   await mkdir(dir, { recursive: true });
   const html = `<!DOCTYPE html>
 <html lang="en">

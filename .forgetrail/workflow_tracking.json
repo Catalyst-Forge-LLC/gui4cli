@@ -243,6 +243,15 @@
       "rationale": "windowd expects an index.html directory and gives Node APIs in the renderer for spawn/stream/cancel.",
       "alternatives_considered": ["Native webview IPC with CLI-owned spawn", "Electron"],
       "status": "active"
+    },
+    {
+      "id": "d13",
+      "timestamp": "2026-08-20T15:20:00",
+      "phase": "2-scaffolding",
+      "decision": "--build writes a reusable windowd folder that wraps the original script in place; no .exe yet",
+      "rationale": "Copying the script would break Node module resolution for Commander/yargs. Folder-first matches the locked --build depth.",
+      "alternatives_considered": ["Copy script into the folder", "Windows .exe in the same step"],
+      "status": "active"
     }
   ],
   "gotchas": [
@@ -330,6 +339,12 @@
       "phase": "2-scaffolding",
       "summary": "User confirmed the fixture window works. Compacted to a two-column 960x620 layout so form, preview, and output fit on screen.",
       "outcome": "Phase 2 remapped exit criteria look satisfied. Wait for user before marking the phase complete."
+    },
+    {
+      "date": "2026-08-20",
+      "phase": "2-scaffolding",
+      "summary": "Added --build: reusable windowd project folder wrapping the original script in place. No .exe.",
+      "outcome": "User can generate a folder and reopen it with npx windowd. Phase 2 still open until they confirm close."
     }
   ]
 }

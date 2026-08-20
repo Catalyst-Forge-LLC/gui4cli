@@ -43,7 +43,7 @@ function buildArgv() {
 
 function updatePreview() {
   const argv = buildArgv();
-  previewEl.textContent = [payload.nodePath, payload.spec.target, ...argv].map(quote).join(" ")
+  previewEl.textContent = [process.execPath, payload.spec.target, ...argv].map(quote).join(" ")
     + "\\n(in " + payload.spec.cwd + ")";
 }
 
@@ -149,7 +149,7 @@ function run() {
     writeFileSync(payload.lastRunPath, JSON.stringify(values, null, 2) + "\\n");
   } catch {}
 
-  child = spawn(payload.nodePath, [payload.spec.target, ...argv], {
+  child = spawn(process.execPath, [payload.spec.target, ...argv], {
     cwd: payload.spec.cwd,
     env: process.env,
     stdio: ["ignore", "pipe", "pipe"],
