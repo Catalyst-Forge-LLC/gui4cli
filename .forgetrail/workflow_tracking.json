@@ -273,6 +273,13 @@
       "issue": "From Cursor's JS Debug Terminal, pnpm dev opened the windowd window and it closed immediately. The same launch stayed open without the debugger. VSCODE_INSPECTOR_OPTIONS / NODE_OPTIONS --inspect are inherited by NW.js/Chromium and tear the window down.",
       "resolution": "Strip inspector env when spawning windowd. Prefer a normal terminal for pnpm dev.",
       "category": "tooling"
+    },
+    {
+      "timestamp": "2026-08-20T15:00:00",
+      "phase": "2-scaffolding",
+      "issue": "First pnpm dev after a pause often printed a ready checkmark then exited; the second try showed the window. JS Debug Terminal still injects NODE_OPTIONS=--require bootloader (not only --inspect). Vite HMR's first reload also fires windowd's beforeunload close signal.",
+      "resolution": "Clear NODE_OPTIONS entirely for the windowd child. Disable HMR in the generated vite.config.js. Retry once if windowd exits within 5s with code 0.",
+      "category": "tooling"
     }
   ],
   "sessions": [

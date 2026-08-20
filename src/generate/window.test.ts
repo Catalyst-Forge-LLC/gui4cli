@@ -34,5 +34,6 @@ describe("writeWindowApp", () => {
     expect(html).toContain("run-pane");
     expect(readFileSync(join(dir, "app.js"), "utf8")).toContain("buildArgv");
     expect(readFileSync(join(dir, "payload.js"), "utf8")).toContain("--input");
+    expect(readFileSync(join(dir, "vite.config.js"), "utf8")).toContain("hmr: false");
   });
 });

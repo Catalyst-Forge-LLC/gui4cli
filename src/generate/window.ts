@@ -55,6 +55,14 @@ export async function writeWindowApp(payload: WindowPayload): Promise<string> {
     `export const payload = ${JSON.stringify(payload, null, 2)};\n`,
     "utf8",
   );
+  await writeFile(
+    join(dir, "vite.config.js"),
+    `export default {
+  server: { hmr: false, watch: null },
+};
+`,
+    "utf8",
+  );
   return dir;
 }
 

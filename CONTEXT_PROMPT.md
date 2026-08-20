@@ -73,7 +73,9 @@ Target → detect + config merge → FormSpec → user submit → Run. LastRun k
 - Show command preview (argv + cwd) before Run.
 - On Windows, cancel must `taskkill /T /F` the child tree.
 - `--json` prints the spec without opening a window (tests and CI).
-- When spawning windowd, strip `VSCODE_INSPECTOR_OPTIONS` and `--inspect` from `NODE_OPTIONS`. Cursor's JS Debug Terminal otherwise opens the window and closes it immediately.
+- When spawning windowd, drop `NODE_OPTIONS` and `VSCODE_INSPECTOR_OPTIONS` entirely. The JS Debug Terminal's `--require` bootloader is enough to kill NW.js on first launch.
+- Generated windows ship `vite.config.js` with HMR off. Vite's first-load reload fires windowd's `beforeunload` close signal.
+- If windowd exits within 5s with code 0, open once more and say so in plain language.
 
 ## Design Philosophy
 
@@ -114,6 +116,10 @@ Target → detect + config merge → FormSpec → user submit → Run. LastRun k
 - Empty form when detect fails (must tell the user to add a config file).
 
 ## Recent Changes
+
+### Session 2026-08-20
+
+- First `pnpm dev` after a pause often failed to show the window; the second try worked. Cleared all inspector `NODE_OPTIONS` for windowd, disabled Vite HMR, retry once on a sub-5s exit.
 
 ### Session 2026-08-13
 
