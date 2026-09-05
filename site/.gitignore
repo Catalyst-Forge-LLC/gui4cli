@@ -1,0 +1,8 @@
+node_modules/
+build/
+docs/dist/
+.svelte-kit/
+.wrangler/
+.filepress/
+.filepress-genie/
+.filepress-import/crawl-cache/

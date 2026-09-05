@@ -10,3 +10,5 @@ build/
 .windowd/
 .gui4cli-window/
 *-gui/
+.wrangler/
+.svelte-kit/

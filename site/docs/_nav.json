@@ -1,0 +1,24 @@
+{
+	"sections": [
+		{
+			"title": "Getting started",
+			"items": [
+				{ "id": "introduction", "title": "Introduction" },
+				{ "id": "install", "title": "Install" },
+				{ "id": "quick-start", "title": "Quick start" }
+			]
+		},
+		{
+			"title": "Using GUI4CLI",
+			"items": [
+				{ "id": "detect", "title": "Detect" },
+				{ "id": "window", "title": "Window" },
+				{ "id": "build", "title": "Project folder" }
+			]
+		},
+		{
+			"title": "Reference",
+			"items": [{ "id": "cli", "title": "CLI" }]
+		}
+	]
+}

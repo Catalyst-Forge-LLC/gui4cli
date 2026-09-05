@@ -33,6 +33,15 @@ pnpm exec tsx src/cli.ts fixtures/resize.js --build --out ./my-resize-gui
 
 Then `npx --yes windowd` inside that folder.
 
+### Site (FilePress)
+
+```bash
+pnpm --dir site install
+pnpm site:dev
+```
+
+Marketing + `/docs` live in `site/`. LocalSlip lease is **`gui4cli-site` on 5201**. Deploy later with `pnpm ship` (Wrangler Pages project `gui4cli`). See [site/README.md](site/README.md).
+
 ### Try a script
 
 ```bash
@@ -47,7 +56,8 @@ Optional overrides: `gui4cli.config.js` or `gui4cli.json` next to the script.
 ```
 src/           TypeScript CLI (detect, schema, window, run)
 fixtures/      Commander + yargs sample scripts
-docs/          GENESIS + Phase 1 brief
+site/          FilePress marketing + /docs (Wrangler)
+docs/          GENESIS + Phase 1 brief (internal)
 CONTEXT_PROMPT.md
 TODO.md
 ```

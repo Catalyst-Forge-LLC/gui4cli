@@ -252,6 +252,15 @@
       "rationale": "Copying the script would break Node module resolution for Commander/yargs. Folder-first matches the locked --build depth.",
       "alternatives_considered": ["Copy script into the folder", "Windows .exe in the same step"],
       "status": "active"
+    },
+    {
+      "id": "d14",
+      "timestamp": "2026-09-05T04:20:00",
+      "phase": "2-scaffolding",
+      "decision": "Marketing + docs are a FilePress site in site/, Wrangler Pages project gui4cli, LocalSlip lease gui4cli-site on 5201",
+      "rationale": "Match ollanet/localslip sibling sites. FilePress owns structure; do not scaffold a SvelteKit marketing app. 5198 is already haulout-site; 5201 was free after gaplast-site on 5200.",
+      "alternatives_considered": ["SvelteKit marketing app", "Docs-only in repo README", "Reuse 5173", "Claim 5198"],
+      "status": "active"
     }
   ],
   "gotchas": [
@@ -345,6 +354,12 @@
       "phase": "2-scaffolding",
       "summary": "Added --build: reusable windowd project folder wrapping the original script in place. No .exe.",
       "outcome": "User can generate a folder and reopen it with npx windowd. Phase 2 still open until they confirm close."
+    },
+    {
+      "date": "2026-09-05",
+      "phase": "2-scaffolding",
+      "summary": "Added FilePress site/ (pages + /docs + Wrangler) modeled on ollanet. LocalSlip lease gui4cli-site on 5201. Intended origin gui4cli.dev. Not deployed.",
+      "outcome": "pnpm site:dev for local preview; pnpm ship when ready to publish."
     }
   ]
 }

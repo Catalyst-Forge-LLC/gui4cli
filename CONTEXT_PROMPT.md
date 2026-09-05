@@ -35,7 +35,8 @@ src/
   last-run/           # local JSON
   window/             # spawn windowd
 fixtures/             # resize.js (Commander), clean.js (yargs)
-docs/                 # GENESIS, PHASE_1_BRIEF
+site/                 # FilePress site + /docs (gui4cli-site, port 5201)
+docs/                 # GENESIS, PHASE_1_BRIEF (internal)
 ```
 
 ## Data Model
@@ -65,6 +66,7 @@ Target → detect + config merge → FormSpec → user submit → Run. LastRun k
 - **D11 (Phase 1):** Product name GUI4CLI; npm/npx/primary bin `gui4cli`; `argui` optional alias. Config: `gui4cli.config.js` / `gui4cli.json`.
 - **D12 (Phase 2):** Open the window by writing a temp folder and spawning `windowd`. WHY: matches windowd's `index.html` + Node-in-renderer model; first launch may download ~200 MB NW.js.
 - **D13 (Phase 2):** `--build` writes a reusable GUI folder that wraps the original script in place. WHY: the script's `node_modules` must still resolve; a copied file would lose Commander/yargs. No `.exe` in this step.
+- **D14 (Phase 2):** Marketing + docs are a FilePress site in `site/`, same shape as ollanet (`pages/`, `docs/` → `/docs`, Wrangler Pages). LocalSlip lease `gui4cli-site` on **5201**. WHY: sibling sites already ship this way; do not invent a SvelteKit marketing app. 5198 is already `haulout-site`.
 
 ## Critical Patterns
 
@@ -104,6 +106,7 @@ Target → detect + config merge → FormSpec → user submit → Run. LastRun k
 ### In Progress
 
 - Phase 2 spine works end to end. `--build` writes a reusable windowd folder that wraps the original script in place.
+- FilePress site scaffolded in `site/` (LocalSlip 5201). Not deployed until asked.
 
 ### Not Started
 
@@ -117,6 +120,10 @@ Target → detect + config merge → FormSpec → user submit → Run. LastRun k
 - Empty form when detect fails (must tell the user to add a config file).
 
 ## Recent Changes
+
+### Session 2026-09-05
+
+- FilePress marketing + `/docs` site in `site/`, modeled on ollanet/localslip. Lease `gui4cli-site` → 5201. Wrangler project `gui4cli`. Intended origin `https://gui4cli.dev` (attach domain after first `pnpm ship`).
 
 ### Session 2026-08-20
 
