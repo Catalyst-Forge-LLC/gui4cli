@@ -2,7 +2,7 @@
 title: Window
 ---
 
-The instant GUI is the v1 hero. GUI4CLI writes a temp folder (`index.html`, `app.js`, payload) and spawns [windowd](https://www.npmjs.com/package/windowd).
+GUI4CLI writes a temp folder (`index.html`, `app.js`, payload) and starts [windowd](https://www.npmjs.com/package/windowd).
 
 ## What you see
 
@@ -30,6 +30,4 @@ If the window flashes and closes:
 
 The window reports **ready / running / streaming / done / failed**. It does not sit on a frozen form while the script runs.
 
-## What the window is not
-
-It is not a browser tab, not Neutralino/Tauri, and not a packaged `.exe`. Those are later.
+The window is a windowd app, not a browser tab and not a packaged `.exe`. Neutralino and Tauri are later.

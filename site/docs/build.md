@@ -2,7 +2,7 @@
 title: Project folder
 ---
 
-`--build` writes a reusable windowd folder. Instant GUI stays the everyday path; this is for a form you want to open again without re-detecting.
+`--build` writes a reusable windowd folder. Use it when you want the same form again without re-detecting. Everyday use is still `gui4cli my-script.js`.
 
 ```bash
 gui4cli my-script.js --build
@@ -24,6 +24,4 @@ The generated payload keeps an **absolute path** to the original script. Copying
 
 The original script is not rewritten.
 
-## What you do not get
-
-`--build` does not emit a Windows `.exe`, a signed installer, or a portable zip of the script plus dependencies. The folder is a GUI shell. Node still has to resolve the script where it lives.
+The folder is a GUI shell. It is not a Windows `.exe` and not a zip of the script plus dependencies. Node still has to resolve the script where it lives.

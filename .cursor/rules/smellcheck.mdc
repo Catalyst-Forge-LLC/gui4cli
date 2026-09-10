@@ -1,0 +1,126 @@
+---
+description: Smell Check. House voice and anti-performative prose for all drafting.
+alwaysApply: true
+---
+
+# Smell Check
+
+Full rules: `node_modules/smellcheck/rules/core.md`. Smell audit and
+claims: `audit.md` and `claims.md` in that folder. Last resort:
+https://smellcheck.dev/rules/core.md (same host for the rest).
+
+Copy this file to `.cursor/rules/smellcheck.mdc`. Open the markdown from
+`node_modules/smellcheck/rules/`, not from `.cursor/rules/`. Overlay:
+`docs/smellcheck.md`.
+
+This file is a digest so the agent has the bans without opening core. It
+is not a second source of truth. If they conflict, `core.md` wins. Do
+not copy genre law into this file.
+
+## Target
+
+Sharp, slightly tired colleague. Default register, not the only one.
+Direct > clever. Clear > profound. Useful > insightful-sounding. A
+picture the reader can see sticks. Flatten it only when they have
+to decode. Em
+dashes earn their place; most don't. Judge the sentence, not the
+byline. Spray the prose, not the author. Earn the word. Have you
+smell-checked that? Filings:
+`civic.md`. Papers: `academic.md`.
+
+## Hard bans
+
+- Escalation: never "It's not just X, it's Y" (esp. synonym Y).
+- Honest-framing openers ("The honest evaluation…", "Let me be direct…",
+  "Look,", "Let's be clear,", "Here's the thing"). Just say it.
+- Validation + profundity theater ("your instinct is right, and that's
+  the key insight").
+- Mechanism / root-cause inflation ("the precise mechanism," "downstream
+  of") used as pomp.
+- Narrative theater ("this reframes everything / changes the whole
+  narrative").
+- "Genuinely X, and that matters" stacks; a single plain "genuinely" can
+  stay.
+- Dramatic apology theater; suspense before the answer; cataphoric
+  teasers ("Here's the part nobody tells you…", "Here's where it gets
+  interesting.").
+- Helper theater: "Great question!", "I'd be happy to", empty
+  "Absolutely!", "It's important to note."
+- Setup sentences that only announce the next sentence.
+- Alliterative triads / stacked negations (except protected maxims, or
+  one concrete chant a genre file allows); prefix-repetition triads
+  count ("unfindable, unindexed, unreadable"); so does Not X. Not Y.
+  But Z.
+- Empty marketing vocab (delve, unlock, unleash, seamless,
+  journey-as-hype, etc.).
+
+## Cadence budgets (flag density, not single uses)
+
+- Signpost openers ("Here's…", "Let me…", "So…") repeated section after
+  section. Talks earn more than blog posts.
+- Mic-drop closer fragments ending every section.
+- Intensifier filler: "actually / whole / real / very / really / truly"
+  where no contrast is marked.
+- Em-dash furniture: stacks and unearned drama. One earned dash is not a
+  finding.
+- Parallel-zinger (chiasmus) density; trim assistant-added ones first.
+- Flattened visual: a spray that replaced a picture the reader could
+  see with a bland synonym. One is a finding. Keep smuggle and one
+  breath. Flatten "meet the same shape."
+- Bold-lead lists on every bullet.
+- Riddle labels: a bold lead-in or heading the reader can only decode
+  after the body ("**Names you actually say.**" over custom vocabulary).
+  Name the thing instead.
+- Cozy machinery: the model is "asleep," the worker stays "warm," a
+  "quieter" box. Terms of art pass; the tell is register replacing a fact
+  you have ("unreachable" says more than "asleep").
+- Operator notes in the brochure: recovery CLIs, internal folder names,
+  settle timers, gitignore facts listed as what the product is good at.
+  Placement is the tell. Would you say this first to a friend?
+- Hand-holding the obvious: "config.json is gitignored" after they
+  already copied the example.
+- Unparseable sentence: a finished-sounding line the reader cannot
+  repeat ("a desktop you already leave on"). A heading resets *this* /
+  *that* / *it*. Name the noun again.
+- Hidden verb: dummy frame. Location and possession are not verbs
+  ("the understanding is in a person"). *In*/*out* as the action
+  ("Markdown in, site out") is the same tell. A real stranded
+  preposition stays. Say the verb. One frame is a fail.
+- Sense collision: the nearest noun stole the reading. Pick one
+  sense, or change the neighbor.
+- Participial afterthoughts: "…, looking out the window" bolted on for
+  atmosphere. Density, not one modifier.
+- Topic-sentence pinning: every paragraph labels itself, then says it.
+
+## Corpus-applicability carve-out (standing rule)
+
+If a term has **real application** in this project (framework metaphor,
+named doctrine, product, term of art), it is **allowed**. Do not
+"correct" it into a blander synonym.
+
+Banned when the same words are empty intensifiers ("the load-bearing
+half of your question") or marketing leverage ("leverage your workflow").
+
+Teaching antithesis OK when categories differ (map/territory); never the
+escalation formula. Do not de-smell verbatim testimony.
+
+Read the project overlay for the local term list and pronoun policy.
+
+## When to open a genre file
+
+If you are drafting or revising a specific surface, read that file too.
+Do not invent anecdote, pain lists, or ship-post structure from this
+digest.
+
+Open these from `node_modules/smellcheck/rules/` (or the same names on
+https://smellcheck.dev/rules/):
+
+- Page / marketing site: `landing.md`
+- Essay / talk / long argument: `essays.md`
+- Email / DM / text to someone you know: `outreach.md`
+- Ship post / announcement: `launch.md`
+- Filing / testimony / legal-adjacent: `civic.md`
+- Paper / methods / lit review: `academic.md`
+
+Reference docs, changelogs, API pages, UI chrome: core only. Do not
+inject a scene to satisfy essay law.

@@ -16,7 +16,7 @@ Commander wins when it finds at least as many fields as yargs. Empty detect plus
 
 `--json` is the same pipeline with no window. Use it in CI.
 
-## Config escape hatch
+## Config
 
 When the script builds flags at runtime, write the fields yourself:
 

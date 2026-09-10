@@ -1,12 +1,12 @@
 ---
 title: A desktop form for a Node CLI.
-description: Turn a Node.js CLI script into a desktop form — inputs, Run, and live output — without rewriting the script.
+description: Turn a Node.js CLI script into a desktop form. Inputs, Run, live output. The original file is unchanged.
 order: 1
 ---
 
-You already have a Commander or yargs script. **GUI4CLI** reads the flags, opens a window, and runs that same file. The script stays the source of truth.
+You already have a Commander or yargs script. **GUI4CLI** reads the flags, opens a window, and runs that same file.
 
-**Detect** the flags · **Open** a window · **Run** the script you already have.
+Detect the flags · Open a window · Run the script you already have.
 
 <div class="cta-row">
   <a class="cta cta-primary" href="/docs">Read the docs →</a>
@@ -17,15 +17,15 @@ You already have a Commander or yargs script. **GUI4CLI** reads the flags, opens
 
 ## What you get
 
-Point it at a script. It detects Commander or yargs options (JSDoc and `--help` are fallbacks), draws a form, and shows the command it will run.
+Point it at a script. It finds Commander or yargs options (JSDoc and `--help` if those are missing), draws a form, and shows the command it will run.
 
-**Run** spawns the original file. Stdout and stderr stream in the window. You get an exit code and a duration. **Cancel** kills the child tree (on Windows, `taskkill /T /F`).
+Run starts the original file. Stdout and stderr stream in the window. You get an exit code and how long it took. Cancel stops the child process.
 
-Last-run values live under `~/.gui4cli/lastrun/`. The next open prefills the form.
+The next open prefills the last values you used.
 
-`--json` prints the detected form and exits — no window. Use that in CI.
+`--json` prints the form and exits. No window. Use that in CI.
 
-`--build` writes a reusable windowd folder that wraps the script **in place**. It does not copy the file, rewrite it, or emit a `.exe`.
+`--build` writes a windowd folder that wraps the script where it already lives. It does not copy the file, rewrite it, or emit a `.exe`.
 
 ## Quick start
 
@@ -33,7 +33,7 @@ Last-run values live under `~/.gui4cli/lastrun/`. The next open prefills the for
 npx gui4cli my-script.js
 ```
 
-Or from this repo:
+From this repo:
 
 ```bash
 pnpm exec tsx src/cli.ts fixtures/resize.js
@@ -41,13 +41,13 @@ pnpm exec tsx src/cli.ts fixtures/resize.js
 
 The first windowd launch downloads the NW.js runtime (~200 MB). After that, a typical Commander or yargs script opens as a form.
 
-Full flags live in the [docs](/docs).
+Flags live in the [docs](/docs).
 
-## What it is not
+## Limits
 
-This is a local wrapper, not a hosted app and not a GUI framework. It does not rewrite your script, ship a Windows installer, or infer flags with an LLM. File and directory fields are text paths today — there is no native picker yet.
+This stays on your machine. It wraps the script you already have. File and directory fields are text paths. There is no native picker yet.
 
-`--help` fallback is thin. If detect comes up empty, add `gui4cli.config.js` next to the script.
+`--help` fallback is thin. If detect finds nothing, add `gui4cli.config.js` next to the script.
 
 <div class="cta-row">
   <a class="cta cta-primary" href="/docs/install">Get started →</a>

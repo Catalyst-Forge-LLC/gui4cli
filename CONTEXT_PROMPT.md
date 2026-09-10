@@ -89,7 +89,7 @@ Target → detect + config merge → FormSpec → user submit → Run. LastRun k
 
 ## Writing/Voice Rules
 
-- No LLM-generated product copy. Errors are short and actionable.
+- No LLM-generated product copy. Errors are short and actionable. Site and docs follow Smell Check (`docs/smellcheck.md`, `node_modules/smellcheck/rules/core.md`).
 
 ## My Preferences
 
