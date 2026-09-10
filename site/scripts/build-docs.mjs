@@ -258,7 +258,7 @@ function renderPage(item, bodyHtml, toc, prev, next) {
 		<a class="docs-brand" href="/docs/">GUI4CLI <span>docs</span></a>
 		<nav class="docs-top-links">
 			<a href="/">Home</a>
-			<a href="/install">Install</a>
+			<a href="/docs/install">Install</a>
 			<a href="https://www.npmjs.com/package/gui4cli">npm</a>
 		</nav>
 	</header>

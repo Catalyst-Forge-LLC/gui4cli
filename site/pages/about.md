@@ -10,7 +10,7 @@ You already have a Commander or yargs script. **GUI4CLI** reads the flags, opens
 
 <div class="cta-row">
   <a class="cta cta-primary" href="/docs">Read the docs →</a>
-  <a class="cta cta-secondary" href="/install">Install GUI4CLI</a>
+  <a class="cta cta-secondary" href="/docs/install">Install GUI4CLI</a>
 </div>
 
 <p class="kicker">npm · npx · Node 20+ · local desktop window</p>
@@ -50,8 +50,7 @@ This is a local wrapper, not a hosted app and not a GUI framework. It does not r
 `--help` fallback is thin. If detect comes up empty, add `gui4cli.config.js` next to the script.
 
 <div class="cta-row">
-  <a class="cta cta-primary" href="/install">Get started →</a>
-  <a class="cta cta-secondary" href="/writing">Read the notes</a>
+  <a class="cta cta-primary" href="/docs/install">Get started →</a>
 </div>
 
 Built by [Catalyst Forge LLC](https://www.catalystforge.com).

@@ -10,22 +10,18 @@ export default defineFilepressConfig({
 	author: 'Catalyst Forge LLC',
 	logo: null,
 	homePage: 'about',
-	topics: [
-		{ label: 'Notes', tag: 'notes' },
-		{ label: 'Release notes', tag: 'releases' }
-	],
 	nav: [
 		{ label: 'Home', href: '/' },
 		{ label: 'Docs', href: '/docs' },
-		{ label: 'Posts', href: '/writing' },
-		{ label: 'Install', href: '/install' },
+		{ label: 'Install', href: '/docs/install' },
 		{ label: 'npm', href: 'https://www.npmjs.com/package/gui4cli' }
 	],
 	footerLinks: [
 		{ label: 'Docs', href: '/docs' },
-		{ label: 'Install', href: '/install' },
+		{ label: 'Install', href: '/docs/install' },
 		{ label: 'npm', href: 'https://www.npmjs.com/package/gui4cli' },
 		{ label: 'GitHub', href: 'https://github.com/Catalyst-Forge-LLC/gui4cli', icon: 'github' }
 	],
+	redirects: [{ from: '/install', to: '/docs/install', status: 301 }],
 	paths: [{ url: '/docs', dir: 'docs/dist' }]
 });
