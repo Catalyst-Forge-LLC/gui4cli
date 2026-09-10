@@ -14,7 +14,11 @@ A two-column window (~960×620): fields on the left, command preview and live ou
 - Exit code and duration when it finishes
 - **Cancel** kills the child tree (Windows: `taskkill /T /F`)
 
-Last-run values load from `~/.gui4cli/lastrun/`.
+Last-run values load from `~/.gui4cli/lastrun/`. Every field is stored, including path fields. Nothing is treated as a secret. Do not type passwords you would not leave on disk.
+
+## Invocation
+
+Run spawns `process.execPath` (your Node) with the original script and the built argv. The working directory is the script directory. The preview string is that same command, with spaces quoted. Cancel kills the child tree (Windows: `taskkill /T /F`). Stdout, stderr, and the exit code stay in the window. Native file pickers are not part of this tool.
 
 ## First launch
 

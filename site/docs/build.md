@@ -2,7 +2,7 @@
 title: Project folder
 ---
 
-`--build` writes a reusable windowd folder. Use it when you want the same form again without re-detecting. Everyday use is still `gui4cli my-script.js`.
+`--build` writes a reusable [windowd](https://www.npmjs.com/package/windowd) folder. **windowd** is the named NW.js launcher. Use `--build` when you want the same form again without re-detecting. Everyday use is still `gui4cli my-script.js`. The folder is not a portable `.exe` and still needs Node next to the original script.
 
 ```bash
 gui4cli my-script.js --build

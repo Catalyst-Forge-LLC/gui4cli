@@ -2,11 +2,13 @@
 
 Turn a Node.js CLI script into a desktop form. Inputs, a Run button, and live output. The original file is unchanged.
 
+The window is a [windowd](https://www.npmjs.com/package/windowd) app. The first launch downloads about 200 MB of NW.js. `--build` writes a reusable windowd folder, not an installer.
+
 **Docs:** [gui4cli.dev/docs](https://gui4cli.dev/docs) · **Site:** [gui4cli.dev](https://gui4cli.dev) · **GitHub:** [Catalyst-Forge-LLC/gui4cli](https://github.com/Catalyst-Forge-LLC/gui4cli)
 
 ## Install
 
-Requires **Node.js 20+**.
+Requires **Node.js 20+**. Expect a one-time NW.js download on the first window.
 
 ```bash
 npx gui4cli my-script.js

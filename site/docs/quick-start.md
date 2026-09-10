@@ -16,7 +16,9 @@ Or print the form and skip the window:
 pnpm exec tsx src/cli.ts fixtures/resize.js --json
 ```
 
-The window shows fields, a command preview, **Run**, live output, and an exit code. Change a value and run again. Last-run values come back the next time.
+The window shows fields, a command preview, **Run**, live output, and an exit code. Change a value and run again. Last-run values come back the next time from `~/.gui4cli/lastrun/`.
+
+`fixtures/resize.js` is a Commander script. Detection is static AST, not a config file. The preview line is the command that will be spawned: Node, the script path, then flags. The working directory is the script's folder. A value with spaces is quoted in the preview and passed as one argument. A false checkbox omits the flag. A nonzero exit stays visible as **failed**.
 
 ## Open your script
 

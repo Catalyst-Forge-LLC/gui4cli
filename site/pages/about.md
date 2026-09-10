@@ -6,7 +6,7 @@ order: 1
 
 You already have a Commander or yargs script. **GUI4CLI** reads the flags, opens a window, and runs that same file.
 
-Detect the flags · Open a window · Run the script you already have.
+The window is a [windowd](https://www.npmjs.com/package/windowd) app. The first launch downloads about 200 MB of NW.js. There is no tiny wrapper and no `.exe`.
 
 <div class="cta-row">
   <a class="cta cta-primary" href="/docs">Read the docs →</a>
@@ -25,7 +25,7 @@ The next open prefills the last values you used.
 
 `--json` prints the form and exits. No window. Use that in CI.
 
-`--build` writes a windowd folder that wraps the script where it already lives. It does not copy the file, rewrite it, or emit a `.exe`.
+`--build` writes a **windowd** folder that wraps the script where it already lives. It does not copy the file, rewrite it, or emit a `.exe`. The generated folder keeps an absolute path to the original script.
 
 ## Quick start
 

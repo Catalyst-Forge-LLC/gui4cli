@@ -2,7 +2,7 @@
 title: Install
 ---
 
-Requires **Node.js 20+**.
+Requires **Node.js 20+**. The first [windowd](https://www.npmjs.com/package/windowd) launch downloads the NW.js runtime (about 200 MB). Later launches use the cache. `--build` writes a reusable windowd folder, not an installer and not a `.exe`.
 
 ## One-off
 

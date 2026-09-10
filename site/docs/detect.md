@@ -46,4 +46,4 @@ Zod validates the merged form before the window opens.
 
 ## What detect does not do
 
-It does not reverse-engineer highly dynamic CLIs, walk subcommands, or treat a failed `--help` spawn as a crash. Those scripts need config.
+It does not reverse-engineer highly dynamic CLIs, walk subcommands, or treat a failed `--help` spawn as a crash. Those scripts need config. Unknown flags are omitted, not guessed into the form.
