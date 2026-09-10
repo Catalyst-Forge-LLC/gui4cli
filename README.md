@@ -1,15 +1,39 @@
 # GUI4CLI
 
-Turn a Node.js CLI script into a simple desktop form — inputs, a Run button, and live output — without rewriting the script.
+Turn a Node.js CLI script into a desktop form — inputs, a Run button, and live output — without rewriting the script.
 
-## Setup
+**Docs:** [gui4cli.dev/docs](https://gui4cli.dev/docs) · **Site:** [gui4cli.dev](https://gui4cli.dev)
 
-### Prerequisites
+## Install
 
-- Node.js 20+
-- pnpm 9+
+Requires **Node.js 20+**.
 
-### Installation (this repo)
+```bash
+npx gui4cli my-script.js
+```
+
+Or globally:
+
+```bash
+npm install -g gui4cli
+gui4cli my-script.js
+```
+
+A folder works too: `gui4cli . --entry bin/cli.js`.
+
+The first windowd launch may download the NW.js runtime (~200 MB). If the window flashes and closes, run from a normal terminal — not Cursor's JavaScript Debug Terminal.
+
+## What you get
+
+- Detects Commander and yargs (JSDoc and `--help` are fallbacks)
+- One window: fields, command preview, **Run**, live stdout/stderr, exit code
+- Last-run values under `~/.gui4cli/lastrun/`
+- `--json` prints the form and exits (CI, no GUI)
+- `--build` writes a reusable windowd folder that wraps the original script **in place** (no `.exe`, no rewrite)
+
+Optional overrides: `gui4cli.config.js` or `gui4cli.json` next to the script. Flags: [CLI](https://gui4cli.dev/docs/cli).
+
+## Development
 
 ```bash
 pnpm install
@@ -18,70 +42,8 @@ pnpm exec tsx src/cli.ts fixtures/resize.js --json
 pnpm dev
 ```
 
-`pnpm dev` opens the Commander fixture in a desktop window. The first windowd launch may download the NW.js runtime (~200 MB).
+`pnpm dev` opens the Commander fixture. Site (FilePress): `pnpm site:dev` (LocalSlip `gui4cli-site` on **5201**). Redeploy: `pnpm ship`.
 
-If the window flashes and closes, run `pnpm dev` from a normal terminal (not Cursor's JavaScript Debug Terminal). Inspector flags inherited by NW.js will shut the window down.
+## License
 
-`--json` prints the detected form and exits (no window). Use that in CI or when you cannot open a GUI.
-
-`--build` writes a reusable project folder (GUI shell + `package.json`). It does not create an `.exe`, and it does not rewrite the original script.
-
-```bash
-pnpm exec tsx src/cli.ts fixtures/resize.js --build
-pnpm exec tsx src/cli.ts fixtures/resize.js --build --out ./my-resize-gui
-```
-
-Then `npx --yes windowd` inside that folder.
-
-### Site (FilePress)
-
-```bash
-pnpm --dir site install
-pnpm site:dev
-```
-
-Marketing + `/docs` live in `site/`. LocalSlip lease is **`gui4cli-site` on 5201**. Deploy later with `pnpm ship` (Wrangler Pages project `gui4cli`). See [site/README.md](site/README.md).
-
-### Try a script
-
-```bash
-pnpm exec tsx src/cli.ts path/to/your-script.js
-pnpm exec tsx src/cli.ts . --entry bin/cli.js
-```
-
-Optional overrides: `gui4cli.config.js` or `gui4cli.json` next to the script.
-
-## Project Structure
-
-```
-src/           TypeScript CLI (detect, schema, window, run)
-fixtures/      Commander + yargs sample scripts
-site/          FilePress marketing + /docs (Wrangler)
-docs/          GENESIS + Phase 1 brief (internal)
-CONTEXT_PROMPT.md
-TODO.md
-```
-
-## Features
-
-| Feature | Description |
-| ------- | ----------- |
-| Detect | Static Commander / yargs, then JSDoc, config, `--help` |
-| Instant GUI | One windowd window, no generated repo required |
-| `--build` | Reusable project folder; run later with `npx windowd` |
-| Run | Spawn the original script; stream stdout/stderr; cancel |
-| Last run | Values stored under `~/.gui4cli/lastrun/` |
-
-## Tech Stack
-
-- TypeScript, ESM, pnpm
-- Zod
-- windowd (Node + webview)
-- No database, auth, or LLM
-
-## Documentation
-
-- [docs/PHASE_1_BRIEF.md](docs/PHASE_1_BRIEF.md) — locked architecture
-- [docs/GENESIS.md](docs/GENESIS.md) — product spec
-- [CONTEXT_PROMPT.md](CONTEXT_PROMPT.md) — session handoff
-- [TODO.md](TODO.md) — backlog
+MIT · Catalyst Forge LLC

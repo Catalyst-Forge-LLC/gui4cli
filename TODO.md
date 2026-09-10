@@ -28,4 +28,4 @@ Seeded from `docs/PHASE_1_BRIEF.md` §11. Flat list until Phase 6 (brand pillars
 - [ ] GitHub Actions lint/test when the spine is stable
 - [ ] Drop or keep the `argui` bin alias (product decision)
 - [x] Point `origin` at `Catalyst-Forge-LLC/gui4cli` after the GitHub rename
-- [x] FilePress marketing site (`site/`) with `/docs`, LocalSlip 5201, Wrangler Pages project `gui4cli` (not deployed until asked)
+- [x] FilePress marketing site (`site/`) with `/docs`, LocalSlip 5201; live at [gui4cli.dev](https://gui4cli.dev)

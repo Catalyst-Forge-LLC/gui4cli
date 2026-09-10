@@ -360,6 +360,12 @@
       "phase": "2-scaffolding",
       "summary": "Added FilePress site/ (pages + /docs + Wrangler) modeled on ollanet. LocalSlip lease gui4cli-site on 5201. Intended origin gui4cli.dev. Not deployed.",
       "outcome": "pnpm site:dev for local preview; pnpm ship when ready to publish."
+    },
+    {
+      "date": "2026-09-10",
+      "phase": "2-scaffolding",
+      "summary": "User shipped gui4cli.dev. Install nav points at /docs/install; posts surface removed from chrome. Root README rewritten for npm consumers; package homepage set to https://gui4cli.dev.",
+      "outcome": "Site is live. Next npm publish only after this README is the one they want on the registry (would be 0.0.3)."
     }
   ]
 }

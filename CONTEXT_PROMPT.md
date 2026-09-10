@@ -101,12 +101,12 @@ Target → detect + config merge → FormSpec → user submit → Run. LastRun k
 
 ### Complete
 
-- Phase 1 brief locked; product named GUI4CLI; `gui4cli@0.0.0` reserved on npm.
+- Phase 1 brief locked; product named GUI4CLI; npm latest is `gui4cli@0.0.2`.
 
 ### In Progress
 
 - Phase 2 spine works end to end. `--build` writes a reusable windowd folder that wraps the original script in place.
-- FilePress site scaffolded in `site/` (LocalSlip 5201). Not deployed until asked.
+- FilePress site live at https://gui4cli.dev (LocalSlip `gui4cli-site` on 5201). npm latest is `gui4cli@0.0.2` (CLI unchanged since that tarball).
 
 ### Not Started
 
@@ -123,7 +123,7 @@ Target → detect + config merge → FormSpec → user submit → Run. LastRun k
 
 ### Session 2026-09-05
 
-- FilePress marketing + `/docs` site in `site/`, modeled on ollanet/localslip. Lease `gui4cli-site` → 5201. Wrangler project `gui4cli`. Intended origin `https://gui4cli.dev` (attach domain after first `pnpm ship`).
+- FilePress marketing + `/docs` site in `site/`, modeled on ollanet/localslip. Lease `gui4cli-site` → 5201. Live at https://gui4cli.dev. Root README is the npm README — keep it consumer-first (`npx gui4cli`), not a checkout guide.
 
 ### Session 2026-08-20
 

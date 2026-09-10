@@ -37,6 +37,7 @@
   ],
   "license": "MIT",
   "author": "Catalyst Forge LLC",
+  "homepage": "https://gui4cli.dev",
   "engines": {
     "node": ">=20"
   },

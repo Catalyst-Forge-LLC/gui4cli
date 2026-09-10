@@ -28,7 +28,7 @@ pnpm ship
 # = pnpm build && wrangler pages deploy build --project-name=gui4cli
 ```
 
-Then attach **gui4cli.dev** in the Cloudflare dashboard.
+Live origin: **https://gui4cli.dev**. Attach or confirm the custom domain in the Cloudflare dashboard if it ever drops.
 
 ### Git-connected Pages
 
