@@ -8,7 +8,7 @@ export default defineFilepressConfig({
 	lede: 'Detect the flags. Open a window. Run the script you already have.',
 	url: 'https://gui4cli.dev',
 	author: 'Catalyst Forge LLC',
-	logo: '/logo.svg',
+	logo: '/logo.png',
 	ogImage: '/og.png',
 	homePage: 'about',
 	nav: [
