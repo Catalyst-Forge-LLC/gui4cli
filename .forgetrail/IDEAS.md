@@ -8,4 +8,4 @@ Dump future possibilities here. Bugs that are broken now belong in a BUGS.md (no
 - [ ] Watch mode (re-run on file change)
 - [ ] Drag-and-drop onto file/directory fields
 - [ ] Save named presets, not only last-run
-- [ ] Drop the `argui` bin alias once nobody needs it
+- [x] Drop the `argui` bin alias once nobody needs it

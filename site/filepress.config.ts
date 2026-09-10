@@ -8,13 +8,15 @@ export default defineFilepressConfig({
 	lede: 'Detect the flags. Open a window. Run the script you already have.',
 	url: 'https://gui4cli.dev',
 	author: 'Catalyst Forge LLC',
-	logo: null,
+	logo: '/logo.svg',
+	ogImage: '/og.png',
 	homePage: 'about',
 	nav: [
 		{ label: 'Home', href: '/' },
 		{ label: 'Docs', href: '/docs' },
 		{ label: 'Install', href: '/docs/install' },
-		{ label: 'npm', href: 'https://www.npmjs.com/package/gui4cli' }
+		{ label: 'npm', href: 'https://www.npmjs.com/package/gui4cli' },
+		{ label: 'GitHub', href: 'https://github.com/Catalyst-Forge-LLC/gui4cli', icon: 'github' }
 	],
 	footerLinks: [
 		{ label: 'Docs', href: '/docs' },

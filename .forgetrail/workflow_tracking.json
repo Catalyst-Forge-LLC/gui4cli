@@ -261,6 +261,24 @@
       "rationale": "Match ollanet/localslip sibling sites. FilePress owns structure; do not scaffold a SvelteKit marketing app. 5198 is already haulout-site; 5201 was free after gaplast-site on 5200.",
       "alternatives_considered": ["SvelteKit marketing app", "Docs-only in repo README", "Reuse 5173", "Claim 5198"],
       "status": "active"
+    },
+    {
+      "id": "d15",
+      "timestamp": "2026-09-10T14:10:00",
+      "phase": "2-scaffolding",
+      "decision": "Remove the argui bin alias. Only gui4cli remains.",
+      "rationale": "User confirmed argui is leftover. The product and npm name are GUI4CLI / gui4cli.",
+      "alternatives_considered": ["Keep argui as a hidden alias"],
+      "status": "active"
+    },
+    {
+      "id": "d16",
+      "timestamp": "2026-09-10T14:10:00",
+      "phase": "2-scaffolding",
+      "decision": "Put the public GitHub URL on npm package metadata and the site (repository, bugs, nav).",
+      "rationale": "User confirmed the repo is public: https://github.com/Catalyst-Forge-LLC/gui4cli",
+      "alternatives_considered": ["Keep GitHub off the npm package"],
+      "status": "active"
     }
   ],
   "gotchas": [
@@ -366,6 +384,12 @@
       "phase": "2-scaffolding",
       "summary": "User shipped gui4cli.dev. Install nav points at /docs/install; posts surface removed from chrome. Root README rewritten for npm consumers; package homepage set to https://gui4cli.dev.",
       "outcome": "Site is live. Next npm publish only after this README is the one they want on the registry (would be 0.0.3)."
+    },
+    {
+      "date": "2026-09-10",
+      "phase": "2-scaffolding",
+      "summary": "Dropped argui bin. Public GitHub on package + nav. SVG mark (terminal + form drawer) and illustrated OG. Strip FilePress blog routes from the static build and redirect them home.",
+      "outcome": "Product surface is Home / Docs / Install / npm / GitHub. Redeploy site when ready; npm 0.0.3 still pending."
     }
   ]
 }

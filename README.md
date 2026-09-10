@@ -2,7 +2,7 @@
 
 Turn a Node.js CLI script into a desktop form — inputs, a Run button, and live output — without rewriting the script.
 
-**Docs:** [gui4cli.dev/docs](https://gui4cli.dev/docs) · **Site:** [gui4cli.dev](https://gui4cli.dev)
+**Docs:** [gui4cli.dev/docs](https://gui4cli.dev/docs) · **Site:** [gui4cli.dev](https://gui4cli.dev) · **GitHub:** [Catalyst-Forge-LLC/gui4cli](https://github.com/Catalyst-Forge-LLC/gui4cli)
 
 ## Install
 

@@ -1,0 +1,11 @@
+# FilePress still prerenders empty blog routes. Send them home.
+/writing    /  301
+/writing/*  /  301
+/posts      /  301
+/posts/*    /  301
+/topics     /  301
+/topics/*   /  301
+/tags       /  301
+/tags/*     /  301
+/page/*     /  301
+/rss.xml    /  301

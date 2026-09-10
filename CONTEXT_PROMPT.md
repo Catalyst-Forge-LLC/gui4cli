@@ -63,7 +63,8 @@ Target → detect + config merge → FormSpec → user submit → Run. LastRun k
 - **D6 (Phase 1):** Code-owned Zod schema + optional config. No LLM inference. WHY: CLI metadata is structured; config is the escape hatch.
 - **D7 (Phase 1):** Windows-first for packaged apps. Instant GUI wherever windowd works.
 - **D8 (Phase 1):** No LLM, live search, multi-tenant, or document exports in v1.
-- **D11 (Phase 1):** Product name GUI4CLI; npm/npx/primary bin `gui4cli`; `argui` optional alias. Config: `gui4cli.config.js` / `gui4cli.json`.
+- **D11 (Phase 1):** Product name GUI4CLI; npm/npx/bin `gui4cli`. Config: `gui4cli.config.js` / `gui4cli.json`.
+- **D15 (Phase 2):** Drop the `argui` bin. WHY: leftover name; product is GUI4CLI only.
 - **D12 (Phase 2):** Open the window by writing a temp folder and spawning `windowd`. WHY: matches windowd's `index.html` + Node-in-renderer model; first launch may download ~200 MB NW.js.
 - **D13 (Phase 2):** `--build` writes a reusable GUI folder that wraps the original script in place. WHY: the script's `node_modules` must still resolve; a copied file would lose Commander/yargs. No `.exe` in this step.
 - **D14 (Phase 2):** Marketing + docs are a FilePress site in `site/`, same shape as ollanet (`pages/`, `docs/` → `/docs`, Wrangler Pages). LocalSlip lease `gui4cli-site` on **5201**. WHY: sibling sites already ship this way; do not invent a SvelteKit marketing app. 5198 is already `haulout-site`.
@@ -94,7 +95,7 @@ Target → detect + config merge → FormSpec → user submit → Run. LastRun k
 
 - TypeScript ESM only; pnpm; no CommonJS.
 - Do not introduce PocketBase, auth, or SvelteKit.
-- Do not publish another `0.0.0`. Do not put the GitHub URL on npm until asked.
+- Do not publish another `0.0.0`. GitHub is public: `https://github.com/Catalyst-Forge-LLC/gui4cli` belongs on the package and site.
 - Commit after substantive work; do not push unless asked.
 
 ## Current Feature State
@@ -120,6 +121,10 @@ Target → detect + config merge → FormSpec → user submit → Run. LastRun k
 - Empty form when detect fails (must tell the user to add a config file).
 
 ## Recent Changes
+
+### Session 2026-09-10
+
+- Dropped `argui`. Public GitHub on package + site. SVG mark (terminal → form drawer) plus illustrated `og.png`. FilePress blog routes stripped from the static build and redirected home.
 
 ### Session 2026-09-05
 

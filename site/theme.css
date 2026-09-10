@@ -1,1 +1,6 @@
-/* filepress site theme — edit freely or use Genie Mode in dev */
+/* GUI4CLI — keep the mark compact next to the wordmark */
+.site-logo {
+	height: 3.25rem;
+	width: auto;
+	border-radius: 0.7rem;
+}

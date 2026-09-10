@@ -4,8 +4,7 @@
   "description": "Turn a Node.js CLI script into a desktop form app — inputs, run button, live output.",
   "type": "module",
   "bin": {
-    "gui4cli": "bin/gui4cli.js",
-    "argui": "bin/gui4cli.js"
+    "gui4cli": "bin/gui4cli.js"
   },
   "files": [
     "bin",
@@ -38,6 +37,13 @@
   "license": "MIT",
   "author": "Catalyst Forge LLC",
   "homepage": "https://gui4cli.dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Catalyst-Forge-LLC/gui4cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Catalyst-Forge-LLC/gui4cli/issues"
+  },
   "engines": {
     "node": ">=20"
   },

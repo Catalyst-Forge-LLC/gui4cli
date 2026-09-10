@@ -26,5 +26,3 @@ gui4cli fixtures/resize.js --json
 gui4cli fixtures/resize.js --build
 gui4cli . --entry bin/cli.js
 ```
-
-The `argui` bin is an optional alias of the same CLI.
