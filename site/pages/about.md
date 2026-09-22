@@ -6,7 +6,9 @@ order: 1
 
 You already have a Commander or yargs script. **GUI4CLI** reads the flags, opens a window, and runs that same file.
 
-The window is a [windowd](https://www.npmjs.com/package/windowd) app. The first launch downloads about 200 MB of NW.js. There is no tiny wrapper and no `.exe`.
+The window runs your original script by its path on this computer, with the Node and dependencies installed here. It is not a standalone app you can send to someone.
+
+The window is a [windowd](https://www.npmjs.com/package/windowd) app. The first launch downloads about 200 MB of NW.js.
 
 <div class="cta-row">
   <a class="cta cta-primary" href="/docs">Read the docs →</a>
@@ -25,7 +27,7 @@ The next open prefills the last values you used.
 
 `--json` prints the form and exits. No window. Use that in CI.
 
-`--build` writes a **windowd** folder that wraps the script where it already lives. It does not copy the file, rewrite it, or emit a `.exe`. The generated folder keeps an absolute path to the original script.
+`--build` writes a **windowd** folder that wraps the script where it already lives. It does not copy the file, rewrite it, or emit a `.exe`. The generated folder keeps absolute paths to the original script and to this machine's Node, so it works only on this computer.
 
 ## Quick start
 
@@ -45,7 +47,7 @@ Flags live in the [docs](/docs).
 
 ## Limits
 
-This stays on your machine. It wraps the script you already have. File and directory fields are text paths. There is no native picker yet.
+File and directory fields are text paths. There is no native picker yet.
 
 `--help` fallback is thin. If detect finds nothing, add `gui4cli.config.js` next to the script.
 
