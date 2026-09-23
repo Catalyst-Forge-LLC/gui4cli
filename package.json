@@ -1,6 +1,6 @@
 {
   "name": "gui4cli",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Turn a Node.js CLI script into a desktop form. Inputs, Run, live output. The original file is unchanged.",
   "type": "module",
   "bin": {
