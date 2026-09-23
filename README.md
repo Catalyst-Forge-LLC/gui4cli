@@ -51,3 +51,5 @@ Site (FilePress): `pnpm site:dev` (LocalSlip `gui4cli-site` on **5201**). Redepl
 ## License
 
 MIT · Catalyst Forge LLC
+
+[See the rest of the Catalyst Forge shelf.](https://catalystforge.com/tools/)

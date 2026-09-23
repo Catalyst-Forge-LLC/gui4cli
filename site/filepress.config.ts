@@ -19,6 +19,7 @@ export default defineFilepressConfig({
 		{ label: 'GitHub', href: 'https://github.com/Catalyst-Forge-LLC/gui4cli', icon: 'github' }
 	],
 	footerLinks: [
+		{ label: 'See the rest of the Catalyst Forge shelf.', href: 'https://catalystforge.com/tools/' },
 		{ label: 'Docs', href: '/docs' },
 		{ label: 'Install', href: '/docs/install' },
 		{ label: 'npm', href: 'https://www.npmjs.com/package/gui4cli' },
