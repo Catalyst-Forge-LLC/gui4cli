@@ -27,10 +27,10 @@ A folder works too: `gui4cli . --entry bin/cli.js`.
 
 ## What you get
 
-- Detects Commander and yargs (JSDoc and `--help` are fallbacks)
+- Detects Commander and yargs. If those and JSDoc find no fields, GUI4CLI may run the script with `--help`. That can have side effects.
 - One window: fields, command preview, Run, live stdout/stderr, exit code
 - Remembers last-run values
-- `--json` prints the form and exits (CI, no GUI)
+- `--json` prints the form and exits (no window). It still runs detection, including the `--help` fallback.
 - `--build` writes a reusable windowd folder that wraps the original script in place (no `.exe`, no rewrite). It stores absolute paths to the script and to this machine's Node.
 
 Optional overrides: `gui4cli.config.js` or `gui4cli.json` next to the script. Flags: [CLI](https://gui4cli.dev/docs/cli).

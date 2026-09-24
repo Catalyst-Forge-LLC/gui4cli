@@ -39,7 +39,7 @@ export async function detectForm(target: string, cwd: string): Promise<FormSpec>
         detectSource = "help";
       }
     } catch {
-      // Help can have side effects or hang; config is the escape hatch.
+      // --help can run the script. A timeout does not undo side effects. Config merges after this attempt.
     }
   }
 

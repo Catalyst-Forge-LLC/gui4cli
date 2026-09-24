@@ -9,12 +9,12 @@ GUI4CLI does not ask an LLM what the flags are. It reads the file.
 1. **Commander** — static AST (`option`, `argument`, required, defaults, choices)
 2. **yargs** — same idea (`option`, `alias`, `choices`, `demandOption`)
 3. **JSDoc** — `@param` tags (first-pass; thin)
-4. **Config** — `gui4cli.config.js` or `gui4cli.json` next to the script, merged on top
-5. **`--help`** — spawn the script with `--help` and parse the text (thin; skipped if it hangs or has side effects)
+4. **`--help`** — if the steps above found no fields, GUI4CLI may execute the script with `--help` and stop waiting after a timeout. That execution can have side effects. Use scripts you trust. A hang or an error does not undo work the script already did.
+5. **Config** — `gui4cli.config.js` or `gui4cli.json` next to the script, merged after that attempt. Config does not skip `--help`.
 
 Commander wins when it finds at least as many fields as yargs. Empty detect plus no config throws a plain error and tells you to add a config file.
 
-`--json` is the same pipeline with no window. Use it in CI.
+`--json` skips the window, not the detection pipeline. Use it in CI.
 
 ## Config
 

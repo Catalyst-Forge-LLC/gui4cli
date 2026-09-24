@@ -49,7 +49,7 @@ Flags live in the [docs](/docs).
 
 File and directory fields are text paths. There is no native picker yet.
 
-`--help` fallback is thin. If detect finds nothing, add `gui4cli.config.js` next to the script.
+`--help` fallback may run the script, and that run can have side effects. If detection still finds no fields, add `gui4cli.config.js` next to the script. Config does not skip the `--help` attempt.
 
 <div class="cta-row">
   <a class="cta cta-primary" href="/docs/install">Get started →</a>

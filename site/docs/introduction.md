@@ -11,7 +11,7 @@ The first windowd launch downloads the NW.js runtime (about **200 MB**). After t
 ## What it is
 
 - Detects **Commander** and **yargs** from the source (static AST)
-- Falls back to JSDoc, then optional config, then `--help` text
+- Falls back to JSDoc, then `--help` if those find no fields, then optional config
 - Opens one window: inputs, command preview, Run, live stdout/stderr, exit code
 - Remembers last-run values in `~/.gui4cli/lastrun/`
 - `--build` writes a reusable **windowd** folder that wraps the original script in place
@@ -29,7 +29,7 @@ The site does not run your script.
 
 ## Detection boundary
 
-A typical Commander or yargs script works. JSDoc detect is first-pass. `--help` fallback is thin and is skipped if the spawn hangs or has side effects. File fields are text paths. Dynamic flag builders and subcommands need `gui4cli.config.js`. Unsupported options are not advertised as reliable inferred fields.
+A typical Commander or yargs script works. JSDoc detect is first-pass. If static detection finds no fields, GUI4CLI may execute the script with `--help` and stop waiting after a timeout. That execution can have side effects. Config is merged afterward and does not skip detection. `--json` skips the window, not the detection pipeline. File fields are text paths. Dynamic flag builders and subcommands need `gui4cli.config.js`. Unsupported options are not advertised as reliable inferred fields.
 
 If detect finds nothing, add `gui4cli.config.js` next to the script.
 
