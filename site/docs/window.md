@@ -14,7 +14,7 @@ A two-column window (~960×620): fields on the left, command preview and live ou
 - Exit code and duration when it finishes
 - **Cancel** kills the child tree (Windows: `taskkill /T /F`)
 
-Last-run values load from `~/.gui4cli/lastrun/`. Every field is stored, including path fields. Nothing is treated as a secret. Do not type passwords you would not leave on disk.
+Last-run values are saved locally in `~/.gui4cli/lastrun/` and prefilled next time. Each script gets a JSON file named from a hash of its path. Every field is stored, including path fields. Nothing is treated as a secret, and the files are not encrypted. Do not type passwords you would not leave on disk. There is no control in the window to forget a value. Delete that JSON file, or the folder, to clear remembered values.
 
 ## Invocation
 
