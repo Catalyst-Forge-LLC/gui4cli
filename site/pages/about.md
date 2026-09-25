@@ -1,5 +1,5 @@
 ---
-title: A desktop form for a Node CLI.
+title: A window for the script you already have.
 description: Turn a Node.js CLI script into a desktop form. Inputs, Run, live output. The original file is unchanged.
 order: 1
 ---
