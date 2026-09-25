@@ -5,7 +5,7 @@ export default defineFilepressConfig({
 	description:
 		'Turn a Node.js CLI script into a desktop form. Inputs, Run, live output. The original file is unchanged.',
 	tagline: 'A desktop form for a Node CLI.',
-	lede: 'Detect the flags. Open a window. Run the script you already have.',
+	lede: 'Flags · window · same script',
 	url: 'https://gui4cli.dev',
 	author: 'Catalyst Forge LLC',
 	logo: '/logo.png',
