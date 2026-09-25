@@ -32,14 +32,12 @@ Optional overrides go in `gui4cli.config.js` or `gui4cli.json` next to the scrip
 ## Reuse the window later
 
 ```bash
-npx gui4cli path/to/your-script.js --build
-```
-
-That writes `<title-slug>-gui/` in the current directory (or `--out`). Open it with:
-
-```bash
+npx gui4cli path/to/your-script.js --build --out ./my-resize-gui
+cd my-resize-gui
 npx --yes windowd
 ```
+
+`windowd` launches the folder you are in. Without `--out`, the folder is `<title-slug>-gui/` in the current directory. Change into that folder before `npx --yes windowd`.
 
 The original script path stays absolute. Node still resolves `commander` / `yargs` from the script's own `node_modules`.
 

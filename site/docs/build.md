@@ -5,18 +5,18 @@ title: Project folder
 `--build` writes a reusable [windowd](https://www.npmjs.com/package/windowd) folder. **windowd** is the named NW.js launcher. Use `--build` when you want the same form again without re-detecting. Everyday use is still `gui4cli my-script.js`. The folder is not a portable `.exe` and still needs Node next to the original script.
 
 ```bash
-gui4cli my-script.js --build
-gui4cli my-script.js --build --out ./my-resize-gui
-gui4cli my-script.js --build --out ./my-resize-gui --force
-```
-
-Default folder name is `<title-slug>-gui` in the current directory (gitignored as `*-gui/` in this repo).
-
-Then:
-
-```bash
+npx gui4cli path/to/your-script.js --build --out ./my-resize-gui
+cd my-resize-gui
 npx --yes windowd
 ```
+
+`windowd` with no arguments launches the folder you are in. `cd` into `--out` before that command. `--force` replaces an existing folder:
+
+```bash
+npx gui4cli path/to/your-script.js --build --out ./my-resize-gui --force
+```
+
+Default folder name is `<title-slug>-gui` in the current directory (gitignored as `*-gui/` in this repo). The completion message prints the same `cd` and `npx --yes windowd` lines.
 
 ## In place, not a copy
 

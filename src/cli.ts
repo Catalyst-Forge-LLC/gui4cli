@@ -70,7 +70,7 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
       lastRunPath: lastRunPath(target),
       force: values.force,
     });
-    process.stdout.write(`Wrote ${dir}\nRun it with: npx --yes windowd\n`);
+    process.stdout.write(`Wrote ${dir}\nRun it from that folder:\n  cd ${dir}\n  npx --yes windowd\n`);
     process.stdout.write(`The original script was not changed: ${spec.target}\n`);
     return 0;
   }
