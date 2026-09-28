@@ -3,7 +3,6 @@
 ## Git commits
 
 - Use `git commit -m` or `git commit -F <file>` only.
-- Do **not** add unrequested attribution trailers (e.g. `Co-authored-by`, `Signed-off-by`, `Made-with`, generator stamps) unless the user explicitly asks.
 - Prefer short, purpose-focused messages (why over what).
 - Do not push unless the user asks.
 
