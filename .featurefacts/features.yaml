@@ -1,7 +1,7 @@
 schemaVersion: 0.2.0
 scan_id: scan-add
 product:
-  name: gui4cli
+  name: GUI4CLI
   type: CLI tool
   status: unknown
   license: MIT

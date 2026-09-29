@@ -2,7 +2,7 @@
 feature_facts_version: 0.2.0
 mode: map-backed
 audience: internal
-name: gui4cli
+name: GUI4CLI
 type: unknown
 status: unknown
 selection_state: not-curated
@@ -16,7 +16,7 @@ generated:
   date: 2026-09-25
   generator: featurefacts
   generator_version: 0.2.0
-  projection_fingerprint: f45faabdec2923c951121c35ee78dae59b171e81d49c890f9db444babcfda532
+  projection_fingerprint: 3363ba05d8e34210e10b74bcc5bf805e774dc0993a2af40ac700d0c0e4d6e16a
 counts:
   scope: eligible-confirmed-active
   registered: 0
@@ -43,11 +43,11 @@ assessments:
     undisclosed: 0
 ---
 
-# Feature Facts: gui4cli
+# Feature Facts: GUI4CLI
 
 What can this product do?
 
-Curation has not been approved. The scanner does not select rows.
+No confirmed non-retired capabilities are eligible for this publication target.
 
 Zero rows is a valid label. Candidates are not confirmed capabilities.
 Within the eligible confirmed scope: 0 registered, 0 selected, and 0 not selected.

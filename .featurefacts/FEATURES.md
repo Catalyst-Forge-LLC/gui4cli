@@ -1,4 +1,4 @@
-# Feature register: gui4cli
+# Feature register: GUI4CLI
 
 Scan `scan-init`. Candidates are not confirmed capabilities.
 
