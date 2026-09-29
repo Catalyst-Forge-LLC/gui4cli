@@ -4,7 +4,7 @@ name: GUI4CLI
 type: CLI tool
 status: active
 license: MIT
-version: 0.0.16
+version: 0.0.17
 homepage: https://gui4cli.dev
 repository: https://github.com/Catalyst-Forge-LLC/gui4cli
 stack:
