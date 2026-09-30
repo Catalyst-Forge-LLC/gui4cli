@@ -27,7 +27,7 @@ A folder works too: `gui4cli . --entry bin/cli.js`.
 
 ## What you get
 
-- Detects Commander and yargs. If those and JSDoc find no fields, GUI4CLI may run the script with `--help`. That can have side effects.
+- Detects Commander and yargs. If those, JSDoc, and explicit config fields find no fields, GUI4CLI may run the script with `--help`. That can have side effects. Explicit config fields skip that execution.
 - One window: fields, command preview, Run, live stdout/stderr, exit code
 - Remembers last-run values
 - `--json` prints the form and exits (no window). It still runs detection, including the `--help` fallback.

@@ -31,7 +31,9 @@ export async function detectForm(target: string, cwd: string): Promise<FormSpec>
     detectSource = "jsdoc";
   }
 
-  if (fields.length === 0) {
+  // Explicit fields are sufficient for dynamic CLIs; do not execute their target.
+  // Static fields still merge with config below, preserving override precedence.
+  if (fields.length === 0 && !config?.fields?.length) {
     try {
       const help = parseHelpText(await collectHelpText(target, cwd));
       if (help.length > 0) {
