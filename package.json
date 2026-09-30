@@ -1,6 +1,6 @@
 {
   "name": "gui4cli",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "Turn a Node.js CLI script into a desktop form. Inputs, Run, live output. The original file is unchanged.",
   "type": "module",
   "bin": {
@@ -49,14 +49,14 @@
   },
   "dependencies": {
     "windowd": "^0.7.0",
-    "zod": "^3.25.0"
+    "zod": "^3.25.0",
+    "typescript": "^5.9.0"
   },
   "devDependencies": {
     "@types/node": "^24.0.0",
     "commander": "^14.0.0",
     "smellcheck": "^0.3.4",
     "tsx": "^4.20.0",
-    "typescript": "^5.9.0",
     "vitest": "^4.1.11",
     "yargs": "^18.0.0"
   }

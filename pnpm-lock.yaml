@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      typescript:
+        specifier: ^5.9.0
+        version: 5.9.3
       windowd:
         specifier: ^0.7.0
         version: 0.7.1(@types/node@24.13.3)(tsx@4.23.12)
@@ -27,9 +30,6 @@ importers:
       tsx:
         specifier: ^4.20.0
         version: 4.23.12
-      typescript:
-        specifier: ^5.9.0
-        version: 5.9.3
       vitest:
         specifier: ^4.1.11
         version: 4.1.11(@types/node@24.13.3)(vite@7.3.6(@types/node@24.13.3)(tsx@4.23.12))
