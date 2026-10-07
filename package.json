@@ -55,7 +55,7 @@
   "devDependencies": {
     "@types/node": "^24.0.0",
     "commander": "^14.0.0",
-    "smellcheck": "^0.3.4",
+    "smellcheck": "^0.4.1",
     "tsx": "^4.20.0",
     "vitest": "^4.1.11",
     "yargs": "^18.0.0"

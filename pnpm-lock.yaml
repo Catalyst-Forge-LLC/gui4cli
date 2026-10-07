@@ -25,8 +25,8 @@ importers:
         specifier: ^14.0.0
         version: 14.0.3
       smellcheck:
-        specifier: ^0.3.4
-        version: 0.3.4
+        specifier: ^0.4.1
+        version: 0.4.1
       tsx:
         specifier: ^4.20.0
         version: 4.23.12
@@ -1089,8 +1089,8 @@ packages:
     resolution: {integrity: sha512-1sbhsxqI+I2tqlmjbz99GXNmZtr6tKIyEgGGnJw/MKGblalqk/XoOYYFJlBzTKZCxx8kLaD3FD5s9BEEjx5Pyg==}
     engines: {node: '>=10'}
 
-  smellcheck@0.3.4:
-    resolution: {integrity: sha512-7QhEwrmUpdKi0rg8WlT0m10HsIl5w2gq5MbBijJ9FKrJFBNKsOSkJnNq5HfkLGPd3qs+NBJmVNfKR2svISx5LA==}
+  smellcheck@0.4.1:
+    resolution: {integrity: sha512-L7CRLswMeNablUjxJvbuxyi2fRfPbaREI35x8Y1mTISxq0KZoQtot5gXYCrVqUYer0B8hUnOJHShUliCRrR8XA==}
     engines: {node: '>=20'}
 
   source-map-js@1.2.1:
@@ -2202,7 +2202,7 @@ snapshots:
 
   simple-invariant@2.0.1: {}
 
-  smellcheck@0.3.4: {}
+  smellcheck@0.4.1: {}
 
   source-map-js@1.2.1: {}
 
