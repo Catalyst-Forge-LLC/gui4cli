@@ -4,7 +4,35 @@ description: "GUI4CLI reads a Commander or yargs script and builds a form from i
 order: 1
 ---
 
-<section class="value-hero" aria-label="GUI4CLI overview"><div class="value-intro"><p class="value-kind">Desktop form for an existing Node.js CLI</p><h1>Give your script a window people can use.</h1><p class="value-lede">GUI4CLI reads a Commander or yargs script and builds a form from its flags. Choose inputs, inspect the command, and run the original script with live output in a desktop window.</p><div class="cta-row"><a class="cta cta-primary" href="/docs/install">Install GUI4CLI</a><a class="cta cta-secondary" href="#quick-start">Try the example script</a></div><p class="value-limit">The script and its dependencies stay on this computer. First launch downloads the NW.js runtime, about 200 MB.</p></div><figure class="value-proof"><figcaption>Illustrative example</figcaption><p><strong>Starting point</strong><br>A script has file, width, and output flags that are easy to forget.</p><div class="value-result"><p><strong>What you get</strong><br>Labeled inputs, a Run control, live output, and an exit code.</p></div><p>Run the same local script without retyping its options.</p><p class="value-note">Illustrative form. It is not a standalone app to send to someone else.</p></figure></section>
+<section class="value-hero" aria-label="GUI4CLI overview"><div class="value-intro"><div class="value-headline"><p class="value-kind">Desktop form for an existing Node.js CLI</p><h1>Give your script a window people can use.</h1></div><div class="value-pitch"><p class="value-lede">GUI4CLI reads a Commander or yargs script and builds a form from its flags. Choose inputs, inspect the command, and run the original script with live output in a desktop window.</p><div class="cta-row"><a class="cta cta-primary" href="/docs/install">Install GUI4CLI</a><a class="cta cta-secondary" href="#form-example">See fields, command, and output</a></div><p class="value-limit">The script and its dependencies stay on this computer. First launch downloads the NW.js runtime, about 200 MB.</p></div></div>
+<figure class="value-proof worked-example" id="form-example" tabindex="-1">
+<figcaption>Fill in the options, inspect the command, see the result</figcaption>
+<p class="example-context">The repository’s resize.js fixture accepts real Commander options but does not resize or write files. The form below is a static illustration of those fields.</p>
+<section class="example-step" aria-labelledby="example-step-1">
+<h2 id="example-step-1"><span>1 · Form fields</span> The options have names and saved values</h2>
+<dl class="example-fields"><div><dt>input · source folder</dt><dd><code>./photos</code></dd></div><div><dt>output · destination folder</dt><dd><code>./small</code></dd></div><div><dt>width · output width</dt><dd><code>800</code></dd></div><div><dt>quality · jpeg quality</dt><dd><code>85</code></dd></div></dl><p>Choose values in the generated desktop form; its Run control starts the original script.</p>
+</section>
+<section class="example-step example-report" aria-labelledby="example-step-2">
+<h2 id="example-step-2"><span>2 · Command to inspect</span> The same options go to the existing CLI</h2>
+<pre><code>node fixtures/resize.js \
+  --input ./photos \
+  --output ./small \
+  --width 800 \
+  --quality 85</code></pre><p>GUI4CLI wraps this local script. It does not rewrite its behavior or make a portable app.</p>
+</section>
+<section class="example-step" aria-labelledby="example-step-3">
+<h2 id="example-step-3"><span>3 · Output and exit</span> See what ran and whether it finished</h2>
+<pre><code>Resizing (fixture, no files touched)
+{
+  "output": "./small",
+  "width": "800",
+  "quality": "85",
+  "input": "./photos"
+}</code></pre><p><strong>Exit code: 0</strong></p><p class="example-payoff">You can confirm the chosen options reached the script without retyping a command.</p>
+</section>
+<p class="value-note">Output checked by running the harmless fixture directly. The window is illustrative here; this example creates no images.</p>
+<p class="example-links"><a href="#quick-start">Open the fixture in GUI4CLI</a></p>
+</figure></section>
 
 ## What you get
 
