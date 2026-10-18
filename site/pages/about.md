@@ -4,34 +4,34 @@ description: "GUI4CLI reads a Commander or yargs script and builds a form from i
 order: 1
 ---
 
-<section class="value-hero" aria-label="GUI4CLI overview"><div class="value-intro"><div class="value-headline"><p class="value-kind">Desktop form for an existing Node.js CLI</p><h1>Give your script a window people can use.</h1></div><div class="value-pitch"><p class="value-lede">GUI4CLI reads a Commander or yargs script and builds a form from its flags. Choose inputs, inspect the command, and run the original script with live output in a desktop window.</p><div class="cta-row"><a class="cta cta-primary" href="/docs/install">Install GUI4CLI</a><a class="cta cta-secondary" href="#form-example">See fields, command, and output</a></div><p class="value-limit">The script and its dependencies stay on this computer. First launch downloads the NW.js runtime, about 200 MB.</p></div></div>
-<figure class="value-proof worked-example" id="form-example" tabindex="-1">
-<figcaption>Fill in the options, inspect the command, see the result</figcaption>
-<p class="example-context">The repository’s resize.js fixture accepts real Commander options but does not resize or write files. The form below is a static illustration of those fields.</p>
-<section class="example-step" aria-labelledby="example-step-1">
-<h2 id="example-step-1"><span>1 · Form fields</span> The options have names and saved values</h2>
-<dl class="example-fields"><div><dt>input · source folder</dt><dd><code>./photos</code></dd></div><div><dt>output · destination folder</dt><dd><code>./small</code></dd></div><div><dt>width · output width</dt><dd><code>800</code></dd></div><div><dt>quality · jpeg quality</dt><dd><code>85</code></dd></div></dl><p>Choose values in the generated desktop form; its Run control starts the original script.</p>
-</section>
-<section class="example-step example-report" aria-labelledby="example-step-2">
-<h2 id="example-step-2"><span>2 · Command to inspect</span> The same options go to the existing CLI</h2>
+<section class="value-hero" aria-label="GUI4CLI overview"><div class="value-intro"><div class="value-headline"><p class="value-kind">Desktop form for an existing Node.js CLI</p><h1>Give your script a window people can use.</h1></div><div class="value-pitch"><p class="value-lede">GUI4CLI reads a Commander or yargs script and builds a form from its flags. Choose inputs, inspect the command, and run the original script with live output in a desktop window.</p><div class="cta-row"><a class="cta cta-primary" href="/docs/install">Install GUI4CLI</a><a class="cta cta-secondary" href="#form-example">See the actual window</a></div><p class="value-limit">The script and its dependencies stay on this computer. First launch downloads the NW.js runtime, about 200 MB.</p></div></div>
+<figure class="value-proof product-example" id="form-example" tabindex="-1">
+<figcaption>Your CLI becomes this desktop form</figcaption>
+<p class="example-context">Someone using your script can fill in labeled fields instead of remembering its flags. Here is the actual window GUI4CLI generates for the repository’s resize demo.</p>
+<section class="example-step example-cli" aria-labelledby="example-step-1">
+<div><h2 id="example-step-1"><span>1 · The CLI you already have</span> A script with options to remember</h2><p>This Commander script accepts an input folder, an output folder, a width, and a quality setting.</p></div>
 <pre><code>node fixtures/resize.js \
   --input ./photos \
   --output ./small \
   --width 800 \
-  --quality 85</code></pre><p>GUI4CLI wraps this local script. It does not rewrite its behavior or make a portable app.</p>
+  --quality 85</code></pre>
 </section>
-<section class="example-step" aria-labelledby="example-step-3">
-<h2 id="example-step-3"><span>3 · Output and exit</span> See what ran and whether it finished</h2>
+<section class="example-step example-window" aria-labelledby="example-step-2">
+<h2 id="example-step-2"><span>2 · The GUI it generates</span> Fill in the fields, then review the command</h2>
+<a class="window-image" href="/screenshots/gui4cli-resize.png" aria-label="Open the full-size GUI4CLI desktop screenshot"><img src="/screenshots/gui4cli-resize.png" width="2475" height="1350" alt="Actual GUI4CLI Resize window: Input ./photos, Output ./small, Width 800, Quality 85, and a Verbose checkbox on the left; the matching Node command, Run and Cancel buttons, and an empty Output pane on the right. Status: Ready — review the command, then Run." loading="lazy" decoding="async"></a>
+<p class="screenshot-caption">Actual Windows desktop window, ready to run, with sample values prefilled. <a href="/screenshots/gui4cli-resize.png">Open full-size screenshot</a>.</p>
+</section>
+<section class="example-step example-output" aria-labelledby="example-step-3">
+<div><h2 id="example-step-3"><span>3 · What Run gives you</span> The same script, with its output beside the form</h2><p>Run sends these values to the original script. Its output streams into the window, followed by an exit code and elapsed time.</p><p class="example-payoff">You can change an option and run again without rebuilding the command.</p><p class="fixture-note">Verified demo output, exit code 0. This fixture prints its options; it does not resize or write images.</p></div>
 <pre><code>Resizing (fixture, no files touched)
 {
   "output": "./small",
   "width": "800",
   "quality": "85",
   "input": "./photos"
-}</code></pre><p><strong>Exit code: 0</strong></p><p class="example-payoff">You can confirm the chosen options reached the script without retyping a command.</p>
+}</code></pre>
 </section>
-<p class="value-note">Output checked by running the harmless fixture directly. The window is illustrative here; this example creates no images.</p>
-<p class="example-links"><a href="#quick-start">Open the fixture in GUI4CLI</a></p>
+<p class="example-links"><a href="#quick-start">Open this demo in GUI4CLI</a></p>
 </figure></section>
 
 ## What you get

@@ -578,3 +578,22 @@ main.wrap > .home-with-rail:has(.value-hero) { display: block !important; }
   .home-page .worked-example, .home-page .worked-example.example-pair { grid-template-columns: minmax(0, 1fr); gap: 0; }
   .home-page .worked-example .example-step { padding: 1rem .75rem; }
 }
+
+/* A real desktop capture needs room to show the controls and their command. */
+.home-page .product-example { scroll-margin-top: 1.5rem; }
+.home-page .product-example > figcaption { font-size: 1.35rem; line-height: 1.4; margin-bottom: .75rem; }
+.home-page .product-example .example-context { max-width: 75ch; margin: 0 0 1.5rem; color: var(--ink-soft, #46515a); }
+.home-page .product-example .example-step { min-width: 0; padding: 1.5rem 0; border-top: 1px solid var(--rule, #ccd3d7); }
+.home-page .product-example .example-step h2 { margin: 0 0 .8rem; font: 700 1.1rem/1.4 var(--font-sans, system-ui); letter-spacing: -.015em; text-transform: none; color: var(--ink, #202933); }
+.home-page .product-example .example-step h2 span { display: block; margin-bottom: .4rem; font-size: .8rem; font-weight: 600; color: var(--accent-strong, var(--ink, #202933)); }
+.home-page .product-example :is(.example-cli, .example-output) { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.5rem; align-items: start; }
+.home-page .product-example pre { margin: 0; padding: 1rem; font-size: .85rem; line-height: 1.6; }
+.home-page .product-example pre code { white-space: pre-wrap; overflow-wrap: anywhere; }
+.home-page .product-example .window-image { display: block; margin-top: 1.25rem; border: 1px solid var(--rule, #ccd3d7); border-radius: 6px; overflow: hidden; }
+.home-page .product-example .window-image img { width: 100%; }
+.home-page .product-example :is(.screenshot-caption, .fixture-note) { font-size: .8rem; color: var(--ink-soft, #46515a); line-height: 1.6; }
+.home-page .product-example .example-payoff { font-weight: 600; }
+.home-page .product-example .example-links { margin: 0; font-size: .9rem; }
+@media (max-width: 700px) {
+  .home-page .product-example :is(.example-cli, .example-output) { grid-template-columns: minmax(0, 1fr); gap: .75rem; }
+}
