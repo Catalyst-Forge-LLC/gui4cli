@@ -1,21 +1,10 @@
 ---
-title: Give a command-line script a desktop window.
-description: Turn a Node.js CLI script into a desktop form. Inputs, Run, live output. The original file is unchanged.
+title: "Give your script a window people can use."
+description: "GUI4CLI reads a Commander or yargs script and builds a form from its flags. Choose inputs, inspect the command, and run the original script with live output in a desktop window."
 order: 1
 ---
 
-You already have a Commander or yargs script. **GUI4CLI** reads the flags, opens a window, and runs that same file.
-
-The window runs your original script by its path on this computer, with the Node and dependencies installed here. It is not a standalone app you can send to someone.
-
-The window is a [windowd](https://www.npmjs.com/package/windowd) app. The first launch downloads about 200 MB of NW.js.
-
-<div class="cta-row">
-  <a class="cta cta-primary" href="/docs">Read the docs →</a>
-  <a class="cta cta-secondary" href="/docs/install">Install GUI4CLI</a>
-</div>
-
-<p class="kicker">npm · npx · Node 20+ · local desktop window</p>
+<section class="value-hero" aria-label="GUI4CLI overview"><div class="value-intro"><p class="value-kind">Desktop form for an existing Node.js CLI</p><h1>Give your script a window people can use.</h1><p class="value-lede">GUI4CLI reads a Commander or yargs script and builds a form from its flags. Choose inputs, inspect the command, and run the original script with live output in a desktop window.</p><div class="cta-row"><a class="cta cta-primary" href="/docs/install">Install GUI4CLI</a><a class="cta cta-secondary" href="#quick-start">Try the example script</a></div><p class="value-limit">The script and its dependencies stay on this computer. First launch downloads the NW.js runtime, about 200 MB.</p></div><figure class="value-proof"><figcaption>Illustrative example</figcaption><p><strong>Starting point</strong><br>A script has file, width, and output flags that are easy to forget.</p><div class="value-result"><p><strong>What you get</strong><br>Labeled inputs, a Run control, live output, and an exit code.</p></div><p>Run the same local script without retyping its options.</p><p class="value-note">Illustrative form. It is not a standalone app to send to someone else.</p></figure></section>
 
 ## What you get
 

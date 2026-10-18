@@ -2,10 +2,9 @@ import { defineFilepressConfig } from 'getfilepress';
 
 export default defineFilepressConfig({
 	title: 'GUI4CLI',
-	description:
-		'Turn a Node.js CLI script into a desktop form. Inputs, Run, live output. The original file is unchanged.',
+	description: "GUI4CLI reads a Commander or yargs script and builds a form from its flags. Choose inputs, inspect the command, and run the original script with live output in a desktop window.",
 	tagline: 'An instant GUI for a CLI.',
-	lede: 'Flags · window · same script',
+	lede: "Desktop form for an existing Node.js CLI",
 	url: 'https://gui4cli.dev',
 	author: 'Catalyst Forge LLC',
 	logo: '/logo.png',
