@@ -44,7 +44,7 @@ The next open prefills the last values you used.
 
 `--json` prints the form and exits. No window. Use that in CI.
 
-`--build` writes a **windowd** folder that wraps the script where it already lives. It does not copy the file, rewrite it, or emit a `.exe`. The generated folder keeps absolute paths to the original script and to this machine's Node, so it works only on this computer.
+`--build` writes a **windowd** folder that wraps the script where it already lives. It does not copy the file, rewrite it, or emit a `.exe`. The generated folder keeps absolute paths to the original script and to this machine's Node, so it works only on this computer. It is not a standalone app you can send to someone.
 
 ## Quick start
 
