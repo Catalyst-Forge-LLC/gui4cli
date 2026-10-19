@@ -8,6 +8,22 @@ The window is a [windowd](https://www.npmjs.com/package/windowd) app. The first 
 
 **Docs:** [gui4cli.dev/docs](https://gui4cli.dev/docs) · **Site:** [gui4cli.dev](https://gui4cli.dev) · **GitHub:** [Catalyst-Forge-LLC/gui4cli](https://github.com/Catalyst-Forge-LLC/gui4cli)
 
+## From CLI flags to a desktop form
+
+The repository's resize demo accepts these options:
+
+```bash
+node fixtures/resize.js --input ./photos --output ./small --width 800 --quality 85
+```
+
+From a checkout with dependencies installed, `npx gui4cli fixtures/resize.js` opens this form:
+
+![Actual GUI4CLI desktop window with input, output, width and quality fields; matching command, Run button, and Output pane.](https://gui4cli.dev/screenshots/gui4cli-resize.png)
+
+Actual Windows window in **Ready** state, with sample values filled in. Review the command, then choose Run. The original script executes and its output appears beside the form, followed by its exit code. You can change a field and run again without rebuilding the command.
+
+For this demo, the output begins `Resizing (fixture, no files touched)` and prints the selected options. The fixture does not resize images. The screenshot shows the form before execution. [Full example and output](https://gui4cli.dev/#form-example).
+
 ## Install
 
 Requires **Node.js 20+**. Expect a one-time NW.js download on the first window.
